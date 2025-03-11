@@ -12,5 +12,9 @@ export const useSignStore = defineStore('user', () => {
     user.value = data;
   }
 
-  return { user, isSign, signIn };
+  function signOut() {
+    user.value = {};
+  }
+
+  return { user, isSign, signIn, signOut };
 });

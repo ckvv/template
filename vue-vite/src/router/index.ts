@@ -22,7 +22,7 @@ export const router = createRouter({
 });
 
 router.beforeEach((to, from, next) => {
-  if (to.meta?.auth !== false && !`${to.name?.toString()}`.includes('sign')) {
+  if (to.meta?.auth === true) {
     const { user } = useSignStore();
     if (!user.id) {
       return next({ name: `sign`, query: { to: to.path } });

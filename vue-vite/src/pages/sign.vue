@@ -4,9 +4,6 @@ import { useSignStore } from '@/stores/sign';
 
 definePage({
   name: 'sign',
-  meta: {
-    auth: false,
-  },
 });
 
 const sign = useSignStore();
@@ -18,12 +15,21 @@ function signIn() {
 
   router.push({ path: route.query?.to as string ?? '/auth' });
 }
+
+function signOut() {
+  sign.signOut();
+
+  router.push({ path: '/' });
+}
 </script>
 
 <template>
-  <div class="sign">
-    <ElButton type="primary" @click="signIn">
+  <div class="text-center">
+    <ElButton v-if="!sign.user?.id" type="primary" @click="signIn">
       登录
+    </ElButton>
+    <ElButton v-else type="primary" @click="signOut">
+      退出
     </ElButton>
   </div>
 </template>

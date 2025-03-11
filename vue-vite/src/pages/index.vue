@@ -1,9 +1,6 @@
 <script setup lang="ts">
 definePage({
   name: 'index',
-  meta: {
-    auth: false,
-  },
 });
 </script>
 
