@@ -1,0 +1,16 @@
+# :schema node_modules/wrangler/config-schema.json
+name = "template-server-hono"
+main = "src/index.ts"
+compatibility_date = "2025-03-14"
+compatibility_flags = [
+  "nodejs_compat",
+  "nodejs_compat_populate_process_env",
+  "nodejs_als"
+]
+
+[observability.logs]
+enabled = true
+
+[[routes]]
+pattern = "template.ckvv.net"
+custom_domain = true

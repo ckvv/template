@@ -1,0 +1,35 @@
+{
+  "name": "template-server-hono",
+  "type": "module",
+  "version": "0.0.1",
+  "private": true,
+  "packageManager": "pnpm@10.6.2+sha512.47870716bea1572b53df34ad8647b42962bc790ce2bf4562ba0f643237d7302a3d6a8ecef9e4bdfc01d23af1969aa90485d4cebb0b9638fa5ef1daef656f6c1b",
+  "author": "ckvv",
+  "scripts": {
+    "node:dev": "node --import=tsx --env-file=.env --watch-path=./src src/index.ts",
+    "node:start": "node --env-file=.env dist/index.js",
+    "node:build": "tsc",
+    "lint": "eslint . --fix",
+    "deploy": "wrangler deploy",
+    "dev": "wrangler dev",
+    "start": "wrangler dev"
+  },
+  "dependencies": {
+    "@hono/node-server": "^1.13.8",
+    "dotenv": "^16.4.7",
+    "drizzle-orm": "^0.40.0",
+    "hono": "^4.7.4",
+    "pg": "^8.14.0",
+    "pino": "^9.6.0",
+    "zod": "3.24.2"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^4.10.1",
+    "@types/node": "22.13.5",
+    "drizzle-kit": "^0.30.5",
+    "eslint": "^9.22.0",
+    "tsx": "^4.19.3",
+    "typescript": "^5.8.2",
+    "wrangler": "^4"
+  }
+}
