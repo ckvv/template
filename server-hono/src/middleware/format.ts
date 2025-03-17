@@ -5,7 +5,7 @@ export function formatMiddleware() {
     try {
       await next();
       if (c.error) {
-        return c.json({
+        return c.res = c.json({
           code: 500,
           error: c.error,
         });
