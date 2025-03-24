@@ -3,11 +3,11 @@ import 'dotenv/config';
 import type { BlankEnv } from './type.js';
 import process from 'node:process';
 import { Hono } from 'hono';
-import { authMiddleware, corsMiddleware, formatMiddleware, loggerMiddleware } from './middleware/index.js';
-import { logger } from './utils/logger.js';
-import info from './controller/info.js';
-import users from './controller/users.js';
-import auth from './controller/auth.js';
+import { authMiddleware, corsMiddleware, formatMiddleware, loggerMiddleware } from '#middleware/index.js';
+import { logger } from '#utils/logger.js';
+import info from '#controller/info.js';
+import users from '#controller/users.js';
+import auth from '#controller/auth.js';
 
 const app = new Hono<BlankEnv>();
 

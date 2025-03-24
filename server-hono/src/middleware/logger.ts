@@ -1,5 +1,5 @@
+import { logger } from '#utils/logger.js';
 import { createMiddleware } from 'hono/factory';
-import { logger } from '../utils/logger.js';
 
 export function loggerMiddleware() {
   return createMiddleware(async (c, next) => {
