@@ -1,0 +1,10 @@
+{
+  "extends": "@artus/tsconfig",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "module": "Node16",
+    "moduleResolution": "Node16",
+    "outDir": "dist"
+  },
+  "include": ["src/**/*.ts", "src/**/*.json", "test/**/*.ts"]
+}

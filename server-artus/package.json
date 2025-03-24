@@ -1,0 +1,35 @@
+{
+  "name": "artusx-koa",
+  "type": "commonjs",
+  "version": "1.0.0",
+  "description": "koa for artusx",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "ci": "npm run lint",
+    "dev": "npx nodemon src/index.ts",
+    "lint": "eslint . --fix",
+    "start": "node dist/index.js",
+    "tsc": "rm -rf dist && tsc"
+  },
+  "dependencies": {
+    "@artus/core": "^2.2.2",
+    "@artusx/core": "1.0.1-dev.26",
+    "@artusx/plugin-koa": "^1.0.1-dev.26",
+    "@artusx/utils": "1.0.1-dev.26",
+    "@sequelize/core": "^7.0.0-alpha.37",
+    "nodemon": "3.0.3",
+    "reflect-metadata": "^0.1.13",
+    "sqlite3": "^5.1.7"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^2.6.4",
+    "@artus/tsconfig": "^1.0.1",
+    "@types/node": "20.11.10",
+    "eslint": "^8.56.0",
+    "nodemon": "3.0.3",
+    "ts-node": "10.9.2",
+    "tslib": "2.6.2",
+    "typescript": "5.3.3"
+  }
+}

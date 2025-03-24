@@ -1,0 +1,56 @@
+{
+  "name": "koa-sequelize-template",
+  "version": "1.1.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "NODE_ENV=prod node index.js",
+    "dev": "NODE_ENV=dev nodemon index.js",
+    "test": "NODE_ENV=test npm run initdb; npm run jest",
+    "lint": "eslint . --fix",
+    "jest": "jest",
+    "initdb": "NODE_ENV=dev node ./bin/initdb.js",
+    "release": "standard-version",
+    "prepare": "husky install"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@ckpack/parameter": "^2.6.1",
+    "@koa/cors": "^3.1.0",
+    "@koa/router": "^10.1.1",
+    "dotenv": "^10.0.0",
+    "jsonwebtoken": "^8.5.1",
+    "koa": "^2.13.4",
+    "koa-bodyparser": "^4.3.0",
+    "log4js": "^6.3.0",
+    "pg": "^8.7.1",
+    "qs": "^6.10.2",
+    "redis": "^4.0.0",
+    "sequelize": "^6.12.0-beta.1",
+    "ws": "^8.3.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^15.0.0",
+    "@commitlint/config-conventional": "^15.0.0",
+    "eslint": "^8.4.1",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.3",
+    "husky": "^7.0.4",
+    "jest": "^27.4.3",
+    "lint-staged": "^12.1.2",
+    "nodemon": "^2.0.15",
+    "standard-version": "^9.3.2",
+    "supertest": "^6.1.6"
+  },
+  "nodemonConfig": {
+    "watch": [
+      "app/",
+      "config/"
+    ],
+    "delay": "2000"
+  },
+  "lint-staged": {
+    "*.{js}": [
+      "eslint --fix"
+    ]
+  }
+}
