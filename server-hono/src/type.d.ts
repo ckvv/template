@@ -1,10 +1,12 @@
 import type { logger } from './utils/index.js';
 
 export interface BlankEnv {
-  Bindings: {
-    DATABASE_URL: string;
-  };
+  Bindings: NodeJS.ProcessEnv;
   Variables: {
     logger: typeof logger;
+    user?: {
+      i?: number;
+      username: string;
+    };
   };
 }
