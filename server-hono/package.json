@@ -12,6 +12,9 @@
     "#utils": "./dist/utils/index.js",
     "#type": "./dist/type.js"
   },
+  "engines": {
+    "node": "^22.x"
+  },
   "scripts": {
     "node:dev": "node --import=tsx --env-file=.env --watch-path=./src src/index.ts",
     "node:start": "node --env-file=.env dist/index.js",
