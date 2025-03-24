@@ -8,3 +8,7 @@ export const getReqParms = (request: Request) => {
     request.body,
   ) as Record<string, any>;
 };
+
+export function toUpperCase(params: string) {
+  return params.toUpperCase();
+}

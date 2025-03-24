@@ -1,12 +1,12 @@
 import { ValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
-import { AllExceptionsFilter } from './filters';
+import { AllExceptionsFilter } from '#filters';
 import {
   LoggingInterceptor,
   TransformInterceptor,
   TimeoutInterceptor,
-} from './interceptors';
+} from '#interceptors';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
@@ -22,6 +22,10 @@ async function bootstrap() {
   await app.listen(3000);
 }
 
-bootstrap().catch((err) => {
-  console.log(err);
-});
+bootstrap()
+  .then(() => {
+    console.log('http://localhost:3000/');
+  })
+  .catch((err) => {
+    console.log(err);
+  });

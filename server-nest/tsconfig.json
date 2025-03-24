@@ -17,7 +17,18 @@
     "noImplicitAny": false,
     "strictBindCallApply": false,
     "noFallthroughCasesInSwitch": false,
-    "moduleResolution": "nodenext"
+    "moduleResolution": "nodenext",
+    "paths": {
+      "#*": ["./src/*"],
+      "#constants": ["./src/constants/index.js"],
+      "#decorators": ["./src/decorators/index.js"],
+      "#filters": ["./src/filters/index.js"],
+      "#guards": ["./src/guards/index.js"],
+      "#interceptors": ["./src/interceptors/index.js"],
+      "#middlewares": ["./src/middlewares/index.js"],
+      "#modules": ["./src/modules/index.js"],
+      "#utils": ["./src/utils/index.js"]
+    }
   },
   "exclude": ["dist"],
 }

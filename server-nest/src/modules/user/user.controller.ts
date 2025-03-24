@@ -11,8 +11,8 @@ import {
 import { UserService } from './user.service';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
-import { Auth, User } from '../../decorators';
-import { ROLES } from '../../constants';
+import { Auth, User } from '#decorators';
+import { ROLES } from '#constants';
 @Controller('user')
 export class UserController {
   constructor(private readonly userService: UserService) {}

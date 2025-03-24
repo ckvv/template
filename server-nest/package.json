@@ -5,6 +5,17 @@
   "author": "",
   "private": true,
   "license": "UNLICENSED",
+  "imports": {
+    "#*": "./dist/*",
+    "#constants": "./dist/constants/index.js",
+    "#decorators": "./dist/decorators/index.js",
+    "#filters": "./dist/filters/index.js",
+    "#guards": "./dist/guards/index.js",
+    "#interceptors": "./dist/interceptors/index.js",
+    "#middlewares": "./dist/middlewares/index.js",
+    "#modules": "./dist/modules/index.js",
+    "#utils": "./dist/utils/index.js"
+  },
   "scripts": {
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",

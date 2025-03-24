@@ -6,8 +6,8 @@ import {
 } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { UserModule } from './modules/user/user.module';
-import { loggerMiddleware } from './middlewares';
+import { UserModule } from '#modules';
+import { loggerMiddleware } from '#middlewares';
 @Module({
   imports: [UserModule],
   controllers: [AppController],

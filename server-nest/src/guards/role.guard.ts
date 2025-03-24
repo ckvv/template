@@ -1,7 +1,7 @@
 import { Injectable, ExecutionContext } from '@nestjs/common';
 import { Reflector } from '@nestjs/core';
-import { getReqParms } from '../utils';
-import { ROLES } from '../constants';
+import { getReqParms } from '#utils';
+import { ROLES } from '#constants';
 
 // 鉴权
 @Injectable()
