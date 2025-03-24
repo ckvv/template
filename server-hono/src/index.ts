@@ -1,13 +1,11 @@
 /* eslint-disable perfectionist/sort-imports */
 import 'dotenv/config';
-import type { BlankEnv } from '#type.js';
+import type { BlankEnv } from '#type';
 import process from 'node:process';
 import { Hono } from 'hono';
 import { authMiddleware, corsMiddleware, formatMiddleware, loggerMiddleware } from '#middleware';
 import { logger } from '#utils';
-import info from '#controller/info.js';
-import users from '#controller/users.js';
-import auth from '#controller/auth.js';
+import { auth, info, user } from '#modules';
 
 const app = new Hono<BlankEnv>();
 
@@ -17,7 +15,7 @@ app.use(corsMiddleware());
 app.use(authMiddleware());
 
 app.route('/auth', auth);
-app.route('/user', users);
+app.route('/user', user);
 app.route('/', info);
 
 if (process?.release?.name === 'node') {

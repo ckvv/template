@@ -9,7 +9,8 @@
     "#*": "./dist/*",
     "#db": "./dist/db/index.js",
     "#middleware": "./dist/middleware/index.js",
-    "#utils": "./dist/utils/index.js"
+    "#utils": "./dist/utils/index.js",
+    "#type": "./dist/type.js"
   },
   "scripts": {
     "node:dev": "node --import=tsx --env-file=.env --watch-path=./src src/index.ts",

@@ -1,7 +1,7 @@
-import { userSchema } from '#schemas/user.js';
-import * as userService from '#service/users.js';
 import { Hono } from 'hono';
 import { deleteCookie, setCookie } from 'hono/cookie';
+import { userSchema } from '../user/user.schema.js';
+import * as userService from '../user/user.servece.js';
 
 const app = new Hono();
 

@@ -1,5 +1,5 @@
-import type { userSchema } from '#schemas/user.js';
 import type { z } from 'zod';
+import type { userSchema } from './user.schema.js';
 import { db, users } from '#db';
 import { getRandomStr, toHash } from '#utils';
 import { and, eq } from 'drizzle-orm';

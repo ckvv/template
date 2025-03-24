@@ -1,7 +1,7 @@
-import type { BlankEnv } from '../type.js';
-import { userSchema } from '#schemas/user.js';
-import * as userService from '#service/users.js';
+import type { BlankEnv } from '#type';
 import { Hono } from 'hono';
+import { userSchema } from './user.schema.js';
+import * as userService from './user.servece.js';
 
 const app = new Hono<BlankEnv>();
 

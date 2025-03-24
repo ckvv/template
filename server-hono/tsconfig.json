@@ -7,9 +7,11 @@
     "moduleResolution": "nodenext",
     "paths": {
       "#*": ["./src/*"],
+      "#modules": ["./src/modules/index.js"],
       "#db": ["./src/db/index.js"],
       "#middleware": ["./src/middleware/index.js"],
-      "#utils": ["./src/utils/index.js"]
+      "#utils": ["./src/utils/index.js"],
+      "#type": ["./src/type.js"]
     },
     "resolveJsonModule": true,
     "strict": true,
