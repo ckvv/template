@@ -1,7 +1,7 @@
 import type { userSchema } from '#schemas/user.js';
 import type { z } from 'zod';
-import { db, users } from '#db/index.js';
-import { getRandomStr, toHash } from '#utils/index.js';
+import { db, users } from '#db';
+import { getRandomStr, toHash } from '#utils';
 import { and, eq } from 'drizzle-orm';
 
 export async function signin(params: z.infer<typeof userSchema.signin>) {

@@ -1,10 +1,10 @@
 /* eslint-disable perfectionist/sort-imports */
 import 'dotenv/config';
-import type { BlankEnv } from './type.js';
+import type { BlankEnv } from '#type.js';
 import process from 'node:process';
 import { Hono } from 'hono';
-import { authMiddleware, corsMiddleware, formatMiddleware, loggerMiddleware } from '#middleware/index.js';
-import { logger } from '#utils/logger.js';
+import { authMiddleware, corsMiddleware, formatMiddleware, loggerMiddleware } from '#middleware';
+import { logger } from '#utils';
 import info from '#controller/info.js';
 import users from '#controller/users.js';
 import auth from '#controller/auth.js';

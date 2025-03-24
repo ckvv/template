@@ -6,11 +6,15 @@
     "module": "NodeNext",
     "moduleResolution": "nodenext",
     "paths": {
-      "#*": ["./src/*"]
+      "#*": ["./src/*"],
+      "#db": ["./src/db/index.js"],
+      "#middleware": ["./src/middleware/index.js"],
+      "#utils": ["./src/utils/index.js"]
     },
     "resolveJsonModule": true,
     "strict": true,
     "outDir": "./dist",
+    "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true
   },
   "include": ["src/**/*.ts"]

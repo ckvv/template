@@ -1,4 +1,4 @@
-import type { logger } from './utils/index.js';
+import type { logger } from '#utils';
 
 export interface BlankEnv {
   Bindings: NodeJS.ProcessEnv;
