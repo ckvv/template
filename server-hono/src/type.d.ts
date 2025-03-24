@@ -5,7 +5,7 @@ export interface BlankEnv {
   Variables: {
     logger: typeof logger;
     user?: {
-      i?: number;
+      id: number;
       username: string;
     };
   };
