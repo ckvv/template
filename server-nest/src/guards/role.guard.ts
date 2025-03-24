@@ -14,12 +14,13 @@ export class RolesGuard {
       context.getHandler(),
     );
     if (!roles) return true;
+
     const request = context.switchToHttp().getRequest();
     const { role } = getReqParms(request);
     request.user = {
       id: Math.random(),
       role,
     };
-    return roles.includes(role);
+    return roles.includes(role as string);
   }
 }

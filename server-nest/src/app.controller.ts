@@ -11,7 +11,7 @@ export class AppController implements OnModuleInit {
   }
 
   @Get()
-  async getHello(): Promise<string> {
+  getHello() {
     return this.appService.getHello();
   }
 }
