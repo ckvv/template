@@ -16,10 +16,22 @@
 + [x] server-hono
 + [ ] server-koa
 + [ ] server-midway
-+ [ ] ⭐ server-nest
++ [x] ⭐ server-nest
 + [ ] ⭐ server-nitro
 + [ ] vue-nuxt
 + [x] vue-vite
+
+## 下载
+
+```shell
+# 使用 @ckpack/git-dl 下载 ckvv/template vue-vite 子文件夹
+pnpx @ckpack/git-dl ckvv/template -s "vue-vite"
+
+# 或者 全局安装依赖
+pnpm add -g @ckpack/git-dl
+# 下载 ckvv/template vue-vite 子文件夹
+git-dl ckvv/template -s "vue-vite"
+```
 
 ## 架构
 数据库: PG
