@@ -1,3 +1,11 @@
+# 功能
+登录|注册
+设置 | token | openai | ollama
+
+
+cloudflare
+
+文件上传R2 => pg 矢量数据库
 # Nuxt Minimal Starter
 
 Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.

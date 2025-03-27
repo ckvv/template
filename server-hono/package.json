@@ -10,7 +10,8 @@
     "#db": "./dist/db/index.js",
     "#middleware": "./dist/middleware/index.js",
     "#utils": "./dist/utils/index.js",
-    "#type": "./dist/type.js"
+    "#type": "./dist/type.js",
+    "#config": "./dist/config.js"
   },
   "engines": {
     "node": "^22.x"
@@ -22,7 +23,8 @@
     "lint": "eslint . --fix",
     "deploy": "wrangler deploy",
     "dev": "wrangler dev",
-    "start": "wrangler dev"
+    "start": "wrangler dev",
+    "db:push": "drizzle-kit push"
   },
   "dependencies": {
     "@hono/node-server": "^1.14.0",
