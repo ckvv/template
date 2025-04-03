@@ -11,7 +11,8 @@
     "#middleware": "./dist/middleware/index.js",
     "#utils": "./dist/utils/index.js",
     "#type": "./dist/type.js",
-    "#config": "./dist/config.js"
+    "#config": "./dist/config.js",
+    "#modules": "./dist/modules/index.js"
   },
   "engines": {
     "node": "^22.x"

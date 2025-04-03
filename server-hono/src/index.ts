@@ -1,5 +1,4 @@
 import type { BlankEnv } from '#type';
-import process from 'node:process';
 import { config } from '#config';
 import { authMiddleware, corsMiddleware, formatMiddleware, loggerMiddleware } from '#middleware';
 import { auth, info, user } from '#modules';
@@ -17,7 +16,7 @@ app.route('/auth', auth);
 app.route('/user', user);
 app.route('/', info);
 
-if (process?.release?.name === 'node') {
+if (config.IS_NODE) {
   import('@hono/node-server').then(({ serve }) => {
     serve({
       fetch: app.fetch,
