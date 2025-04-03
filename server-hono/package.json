@@ -24,10 +24,11 @@
     "deploy": "wrangler deploy",
     "dev": "wrangler dev",
     "start": "wrangler dev",
-    "db:push": "drizzle-kit push"
+    "db": "drizzle-kit"
   },
   "dependencies": {
     "@hono/node-server": "^1.14.0",
+    "@neondatabase/serverless": "^1.0.0",
     "dotenv": "^16.4.7",
     "drizzle-orm": "^0.41.0",
     "hono": "^4.7.5",
