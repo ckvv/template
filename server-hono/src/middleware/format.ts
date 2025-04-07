@@ -1,3 +1,4 @@
+import { CustomError } from '#utils';
 import { createMiddleware } from 'hono/factory';
 
 export function formatMiddleware() {
@@ -5,10 +6,15 @@ export function formatMiddleware() {
     try {
       await next();
       if (c.error) {
-        return c.res = c.json({
-          code: 200,
-          message: c.error.message,
-        });
+        return c.res = c.error instanceof CustomError
+          ? c.json({
+              code: c.error.code || 200,
+              message: c.error.message,
+            })
+          : c.json({
+              code: 500,
+              message: c.error.message,
+            });
       }
 
       const type = c.res.headers.get('Content-Type')?.split(';')[0].trim();

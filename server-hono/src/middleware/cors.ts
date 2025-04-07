@@ -1,8 +1,8 @@
-import { cors as _cors } from 'hono/cors';
+import { cors } from 'hono/cors';
 import { createMiddleware } from 'hono/factory';
 
 export function corsMiddleware() {
-  return createMiddleware(_cors({
+  return createMiddleware(cors({
     origin: (origin, _c) => origin || '*',
   }));
 }

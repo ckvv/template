@@ -1,7 +1,8 @@
 import type { z } from 'zod';
 import type { authSchema } from './auth.schema.js';
 import { db, users } from '#db';
-import { getRandomStr, toHash } from '#utils';
+import { CustomError, getRandomStr, toHash } from '#utils';
+
 import { eq } from 'drizzle-orm';
 
 export async function signin(params: z.infer<typeof authSchema.signin>) {
@@ -10,10 +11,13 @@ export async function signin(params: z.infer<typeof authSchema.signin>) {
   });
 
   if (!value || value.password !== await toHash(`${params.password}${value.salt}`)) {
-    throw new Error('用户名密码错误');
+    throw new CustomError('UNAUTHORIZED');
   }
 
-  return value;
+  return {
+    id: value.id,
+    username: value.username,
+  };
 }
 
 export async function signup(params: z.infer<typeof authSchema.signin>) {
@@ -22,7 +26,7 @@ export async function signup(params: z.infer<typeof authSchema.signin>) {
   });
 
   if (value) {
-    throw new Error(`用户名: ${value.username}已存在`);
+    throw new CustomError('DATA_ALREADY_EXIST');
   }
 
   const salt = getRandomStr(16);
@@ -36,6 +40,10 @@ export async function signup(params: z.infer<typeof authSchema.signin>) {
 
 export async function me(params: z.infer<typeof authSchema.me>) {
   return db.query.users.findFirst({
+    columns: {
+      id: true,
+      username: true,
+    },
     where: eq(users.id, params.id),
   });
 }
