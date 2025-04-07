@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.0.1",
   "private": true,
-  "packageManager": "pnpm@10.6.2+sha512.47870716bea1572b53df34ad8647b42962bc790ce2bf4562ba0f643237d7302a3d6a8ecef9e4bdfc01d23af1969aa90485d4cebb0b9638fa5ef1daef656f6c1b",
+  "packageManager": "pnpm@10.7.1+sha512.2d92c86b7928dc8284f53494fb4201f983da65f0fb4f0d40baafa5cf628fa31dae3e5968f12466f17df7e97310e30f343a648baea1b9b350685dafafffdf5808",
   "author": "ckvv",
   "imports": {
     "#*": "./dist/*",
@@ -32,6 +32,7 @@
     "@neondatabase/serverless": "^1.0.0",
     "dotenv": "^16.4.7",
     "drizzle-orm": "^0.41.0",
+    "fast-jwt": "^6.0.1",
     "hono": "^4.7.5",
     "pg": "^8.14.1",
     "pino": "^9.6.0",
@@ -41,10 +42,10 @@
     "@antfu/eslint-config": "^4.11.0",
     "@types/node": "22.14.0",
     "drizzle-kit": "^0.30.6",
-    "eslint": "^9.23.0",
+    "eslint": "^9.24.0",
     "tsx": "^4.19.3",
-    "typescript": "^5.8.2",
-    "wrangler": "^4.7.0"
+    "typescript": "^5.8.3",
+    "wrangler": "^4.7.2"
   },
   "pnpm": {
     "onlyBuiltDependencies": [

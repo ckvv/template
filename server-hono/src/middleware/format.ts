@@ -6,8 +6,8 @@ export function formatMiddleware() {
       await next();
       if (c.error) {
         return c.res = c.json({
-          code: 500,
-          error: c.error,
+          code: 200,
+          message: c.error.message,
         });
       }
 
@@ -33,7 +33,7 @@ export function formatMiddleware() {
     catch (error) {
       return c.json({
         code: 500,
-        error,
+        message: error,
       });
     }
   });
