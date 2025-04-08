@@ -1,11 +1,11 @@
-import type { z } from 'zod';
+import type { TypeOf } from 'zod';
 import type { authSchema } from './auth.schema.js';
 import { db, users } from '#db';
 import { CustomError, getRandomStr, toHash } from '#utils';
 
 import { eq } from 'drizzle-orm';
 
-export async function signin(params: z.infer<typeof authSchema.signin>) {
+export async function signin(params: TypeOf<typeof authSchema.signin>) {
   const value = await db.query.users.findFirst({
     where: eq(users.username, params.username),
   });
@@ -20,7 +20,7 @@ export async function signin(params: z.infer<typeof authSchema.signin>) {
   };
 }
 
-export async function signup(params: z.infer<typeof authSchema.signin>) {
+export async function signup(params: TypeOf<typeof authSchema.signin>) {
   const value = await db.query.users.findFirst({
     where: eq(users.username, params.username),
   });
@@ -38,7 +38,7 @@ export async function signup(params: z.infer<typeof authSchema.signin>) {
   }).returning();
 }
 
-export async function me(params: z.infer<typeof authSchema.me>) {
+export async function me(params: TypeOf<typeof authSchema.me>) {
   return db.query.users.findFirst({
     columns: {
       id: true,

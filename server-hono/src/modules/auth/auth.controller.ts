@@ -1,5 +1,5 @@
 import type { BlankEnv } from '#type';
-import { jwt } from '#utils';
+import { jwt, readValidatedBody } from '#utils';
 import { Hono } from 'hono';
 import { deleteCookie, setCookie } from 'hono/cookie';
 import { authSchema } from './auth.schema.js';
@@ -8,7 +8,7 @@ import * as authService from './auth.service.js';
 const app = new Hono<BlankEnv>();
 
 app.post('/signin', async (c) => {
-  const params = authSchema.signin.parse(await c.req.json());
+  const params = await readValidatedBody(c, authSchema.signin);
   const users = await authService.signin(params);
 
   setCookie(c, 'token', await jwt.sign({
@@ -18,7 +18,7 @@ app.post('/signin', async (c) => {
 });
 
 app.post('/signup', async (c) => {
-  const params = authSchema.signup.parse(await c.req.json());
+  const params = await readValidatedBody(c, authSchema.signup);
   const [user] = await authService.signup(params);
   return c.json(user);
 });

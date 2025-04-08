@@ -1,4 +1,5 @@
 import type { BlankEnv } from '#type';
+import { getValidatedRouterParams } from '#utils';
 import { Hono } from 'hono';
 import { userSchema } from './user.schema.js';
 import * as userService from './user.service.js';
@@ -10,11 +11,8 @@ app.get('/', async (c) => {
   return c.json(users);
 });
 
-app.get('/:userId', async (c) => {
-  const params = userSchema.findById.parse({
-    id: c.req.param('userId'),
-  });
-
+app.get('/:id', async (c) => {
+  const params = await getValidatedRouterParams(c, userSchema.findById);
   const users = await userService.findById(params);
   return c.json(users);
 });

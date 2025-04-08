@@ -1,20 +1,33 @@
-import { CustomError } from '#utils';
+import { CustomError, ERRORS } from '#utils';
 import { createMiddleware } from 'hono/factory';
+import { ZodError } from 'zod';
 
 export function formatMiddleware() {
   return createMiddleware(async (c, next) => {
     try {
       await next();
       if (c.error) {
-        return c.res = c.error instanceof CustomError
-          ? c.json({
-              code: c.error.code || 200,
+        switch (true) {
+          case c.error instanceof ZodError:
+            c.res = c.json({
+              ...ERRORS.VALIDATION_FAILED,
+              errors: c.error.issues,
+            });
+            break;
+          case c.error instanceof CustomError:
+            c.res = c.json({
+              code: c.error?.code || 200,
               message: c.error.message,
-            })
-          : c.json({
+            });
+            break;
+          default:
+            c.res = c.json({
               code: 500,
               message: c.error.message,
             });
+            break;
+        }
+        return;
       }
 
       const type = c.res.headers.get('Content-Type')?.split(';')[0].trim();
