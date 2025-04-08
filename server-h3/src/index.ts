@@ -1,22 +1,26 @@
 import { createServer } from 'node:http';
+import { config } from '#config';
+import { authMiddleware, corsMiddleware, loggerMiddleware } from '#middleware';
 import { authRouter, infoRouter, userRouter } from '#modules';
-import { createH3, toNodeHandler, withBase } from 'h3-nightly';
+import { logger } from '#utils';
+import { createH3, toNodeHandler, withBase } from 'h3';
 
 const app = createH3({
   onError: (error) => {
-    console.error(error);
-  },
-  onRequest: (event) => {
-    console.warn('Request:', event.url);
+    logger.error(error);
   },
 });
 
-const baseRouter = createH3();
+app.use(corsMiddleware());
+app.use(loggerMiddleware());
+app.use(authMiddleware());
 
-baseRouter.use('/**', withBase('/info', infoRouter.handler));
-baseRouter.use('/auth/**', withBase('/auth', authRouter.handler));
-baseRouter.use('/user/**', withBase('/user', userRouter.handler));
+app.use('/**', withBase('/info', infoRouter.handler));
+app.use('/auth/**', withBase('/auth', authRouter.handler));
+app.use('/user/**', withBase('/user', userRouter.handler));
 
-app.use(baseRouter);
-
-createServer(toNodeHandler(app)).listen(3000);
+createServer(toNodeHandler(app))
+  .listen(config.PORT)
+  .on('listening', () => {
+    logger.info(`Ready on http://localhost:${config.PORT}`);
+  }); ;

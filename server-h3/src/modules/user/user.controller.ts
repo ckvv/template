@@ -1,7 +1,17 @@
-import { createH3 } from 'h3-nightly';
+import { createH3, getValidatedRouterParams } from 'h3';
+import { userSchema } from './user.schema.js';
+import * as userService from './user.service.js';
 
 export const app = createH3();
 
-app.get('/', (_event) => {
-  return 'user';
+app.get('/', async (_event) => {
+  const users = await userService.findMany();
+  return users;
+});
+
+app.get('/:id', async (event) => {
+  const params = await getValidatedRouterParams(event, userSchema.findById.parse);
+
+  const user = await userService.findById(params);
+  return user;
 });
