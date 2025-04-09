@@ -13,8 +13,8 @@
     "lint": "eslint --fix"
   },
   "dependencies": {
-    "@vueuse/core": "^13.0.0",
-    "element-plus": "^2.9.6",
+    "@vueuse/core": "^13.1.0",
+    "element-plus": "^2.9.7",
     "pinia": "^3.0.1",
     "unplugin-vue-components": "^28.4.1",
     "unplugin-vue-router": "^0.12.0",
@@ -22,19 +22,19 @@
     "vue-router": "^4.5.0"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^4.8.1",
-    "@tailwindcss/vite": "^4.0.12",
-    "@tsconfig/node22": "^22.0.0",
-    "@types/node": "^22.13.9",
-    "@vitejs/plugin-vue": "^5.2.1",
-    "@vitejs/plugin-vue-jsx": "^4.1.1",
+    "@antfu/eslint-config": "^4.11.0",
+    "@tailwindcss/vite": "^4.1.3",
+    "@tsconfig/node22": "^22.0.1",
+    "@types/node": "^22.14.0",
+    "@vitejs/plugin-vue": "^5.2.3",
+    "@vitejs/plugin-vue-jsx": "^4.1.2",
     "@vue/tsconfig": "^0.7.0",
-    "eslint": "^9.21.0",
+    "eslint": "^9.24.0",
     "jiti": "^2.4.2",
     "npm-run-all2": "^7.0.2",
-    "tailwindcss": "^4.0.12",
-    "typescript": "~5.8.0",
-    "vite": "^6.2.1",
+    "tailwindcss": "^4.1.3",
+    "typescript": "~5.8.3",
+    "vite": "^6.2.5",
     "vite-plugin-vue-devtools": "^7.7.2",
     "vue-tsc": "^2.2.8"
   }
