@@ -1,1 +1,1 @@
-export { ERRORS } from './error.js';
+export { ERRORS } from './error.ts';

@@ -1,6 +1,6 @@
 import { createH3, getValidatedRouterParams } from 'h3';
-import { userSchema } from './user.schema.js';
-import * as userService from './user.service.js';
+import { userSchema } from './user.schema.ts';
+import * as userService from './user.service.ts';
 
 export const app = createH3();
 

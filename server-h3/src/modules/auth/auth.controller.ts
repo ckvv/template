@@ -1,7 +1,7 @@
 import { jwt } from '#utils';
 import { createH3, deleteCookie, readValidatedBody, setCookie } from 'h3';
-import { authSchema } from './auth.schema.js';
-import * as authService from './auth.service.js';
+import { authSchema } from './auth.schema.ts';
+import * as authService from './auth.service.ts';
 
 export const app = createH3();
 
