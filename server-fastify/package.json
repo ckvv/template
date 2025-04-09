@@ -2,7 +2,7 @@
   "name": "server-h3",
   "type": "module",
   "version": "0.0.1",
-  "packageManager": "pnpm@10.7.1",
+  "packageManager": "pnpm@10.8.0+sha512.0e82714d1b5b43c74610193cb20734897c1d00de89d0e18420aebc5977fa13d780a9cb05734624e81ebd81cc876cd464794850641c48b9544326b5622ca29971",
   "description": "",
   "author": "ckvv",
   "license": "ISC",
@@ -31,7 +31,6 @@
   "dependencies": {
     "@fastify/cookie": "^11.0.2",
     "@fastify/cors": "^11.0.1",
-    "@neondatabase/serverless": "^1.0.0",
     "drizzle-kit": "^0.30.6",
     "drizzle-orm": "^0.41.0",
     "fast-jwt": "^6.0.1",
