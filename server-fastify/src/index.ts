@@ -1,18 +1,18 @@
 import { config } from '#config';
-import { authMiddleware } from '#middleware';
+import { authMiddleware, fastifyCookie, fastifyCors, formatMiddleware } from '#middleware';
 import { authRouter, infoRouter, userRouter } from '#modules';
 import { logger } from '#utils';
-import cookie from '@fastify/cookie';
-import cors from '@fastify/cors';
 import fastify from 'fastify';
 
 const server = fastify({
   loggerInstance: logger,
 });
 
-server.register(cors);
-server.register(cookie);
+server.register(formatMiddleware);
+server.register(fastifyCors);
+server.register(fastifyCookie);
 server.register(authMiddleware);
+
 server.register(infoRouter);
 server.register(userRouter, {
   prefix: '/user',

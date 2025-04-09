@@ -14,4 +14,8 @@ declare module 'fastify' {
       id: number;
     } | null;
   }
+
+  interface FastifyInstance {
+    format: (data: unknown) => { code: 200; data };
+  }
 }

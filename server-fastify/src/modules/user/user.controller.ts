@@ -7,7 +7,7 @@ import * as userService from './user.service.js';
 export const userRouter: FastifyPluginAsync = async (fastify, opts) => {
   fastify.get('/', async (request, reply) => {
     const users = await userService.findMany();
-    return users;
+    return fastify.format(users);
   });
 
   fastify.get('/:id', async (request, reply) => {
@@ -15,6 +15,6 @@ export const userRouter: FastifyPluginAsync = async (fastify, opts) => {
 
     const user = await userService.findById(params);
 
-    return user;
+    return fastify.format(user);
   });
 };

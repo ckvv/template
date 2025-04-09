@@ -14,13 +14,13 @@ export const authRouter: FastifyPluginAsync = async (fastify, opts) => {
     }), {
       path: '/',
     });
-    return users;
+    return fastify.format(users);
   });
 
   fastify.post('/signup', async (request, reply) => {
     const params = await readValidatedBody(request, authSchema.signup);
     const [user] = await authService.signup(params);
-    return user;
+    return fastify.format(user);
   });
 
   fastify.post('/signout', async (request, reply) => {
@@ -32,9 +32,9 @@ export const authRouter: FastifyPluginAsync = async (fastify, opts) => {
       id: request?.user?.id as number,
     });
 
-    return {
+    return fastify.format({
       id: user?.id,
       username: user?.username,
-    };
+    });
   });
 };

@@ -9,7 +9,7 @@ function isInWhiteList(path: string) {
 
 export const authMiddleware = fp(async (fastify, opts) => {
   fastify.decorateRequest('user');
-  fastify.addHook('preHandler', async (request, reply) => {
+  fastify.addHook('onRequest', async (request, reply) => {
     if (isInWhiteList(request.url)) {
       return;
     }
