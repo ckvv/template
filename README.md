@@ -3,23 +3,24 @@
 
 ## 创建项目的模板
 
-+ [ ] ⭐ bin
-+ [ ] ⭐ client-electron
-+ [ ] ⭐ client-tauri
++ [ ] bin
++ [ ] 🧠 client-electron
++ [ ] 🧠 client-tauri
 + [ ] lib-js
 + [ ] lib-vue
-+ [ ] ⭐ react-next
-+ [ ] ⭐ react-vite
++ [ ] 🧠 react-next
++ [ ] 🧠 react-vite
++ [ ] server-artus
 + [ ] server-elysia
-+ [ ] server-fastify
-+ [ ] server-h3
++ [x] server-fastify
++ [x] server-h3
 + [x] server-hono
-+ [ ] server-koa
++ [x] 🚧 server-koa
 + [ ] server-midway
-+ [x] ⭐ server-nest
-+ [ ] ⭐ server-nitro
-+ [ ] vue-nuxt
-+ [x] vue-vite
++ [x] 🚧 server-nest
++ [ ] server-nitro
++ [x] 🚧 vue-nuxt
++ [x] 🚧 vue-vite
 
 ## 下载
 
@@ -42,8 +43,8 @@ ORM: drizzle sequelize prisma
 
 登录
 注册
+JWT
 登录后可以查看当前注册的用户
-不登录可以查看功能介绍
 
 ## 部署方案
 
