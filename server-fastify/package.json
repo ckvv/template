@@ -1,0 +1,48 @@
+{
+  "name": "server-h3",
+  "type": "module",
+  "version": "0.0.1",
+  "packageManager": "pnpm@10.7.1",
+  "description": "",
+  "author": "ckvv",
+  "license": "ISC",
+  "keywords": [],
+  "main": "index.js",
+  "imports": {
+    "#*": "./dist/*",
+    "#db": "./dist/db/index.js",
+    "#middleware": "./dist/middleware/index.js",
+    "#utils": "./dist/utils/index.js",
+    "#type": "./dist/type.js",
+    "#config": "./dist/config.js",
+    "#modules": "./dist/modules/index.js",
+    "#constant": "./dist/constant/index.js"
+  },
+  "engines": {
+    "node": "^22.x"
+  },
+  "scripts": {
+    "dev": "node --import=tsx --env-file=.env --watch-path=./src src/index.ts",
+    "start": "node --env-file=.env dist/index.js",
+    "build": "tsc",
+    "lint": "eslint . --fix",
+    "db": "drizzle-kit"
+  },
+  "dependencies": {
+    "@neondatabase/serverless": "^1.0.0",
+    "drizzle-kit": "^0.30.6",
+    "drizzle-orm": "^0.41.0",
+    "fast-jwt": "^6.0.1",
+    "fastify": "^5.2.2",
+    "pg": "^8.14.1",
+    "pino": "^9.6.0",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^4.11.0",
+    "@types/node": "22.14.0",
+    "eslint": "^9.24.0",
+    "tsx": "^4.19.3",
+    "typescript": "^5.8.3"
+  }
+}
