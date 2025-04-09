@@ -1,8 +1,8 @@
 import type { BlankEnv } from '#type';
 import { getValidatedRouterParams } from '#utils';
 import { Hono } from 'hono';
-import { userSchema } from './user.schema.js';
-import * as userService from './user.service.js';
+import { userSchema } from './user.schema.ts';
+import * as userService from './user.service.ts';
 
 const app = new Hono<BlankEnv>();
 

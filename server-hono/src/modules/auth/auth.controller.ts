@@ -2,8 +2,8 @@ import type { BlankEnv } from '#type';
 import { jwt, readValidatedBody } from '#utils';
 import { Hono } from 'hono';
 import { deleteCookie, setCookie } from 'hono/cookie';
-import { authSchema } from './auth.schema.js';
-import * as authService from './auth.service.js';
+import { authSchema } from './auth.schema.ts';
+import * as authService from './auth.service.ts';
 
 const app = new Hono<BlankEnv>();
 

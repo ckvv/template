@@ -1,5 +1,5 @@
 import type { TypeOf } from 'zod';
-import type { authSchema } from './auth.schema.js';
+import type { authSchema } from './auth.schema.ts';
 import { db, users } from '#db';
 import { CustomError, getRandomStr, toHash } from '#utils';
 
