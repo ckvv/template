@@ -1,13 +1,13 @@
-import type { FastifyPluginCallback } from 'fastify';
+import type { FastifyPluginAsync } from 'fastify';
 import { getValidatedRouterParams } from '#utils';
 import { userSchema } from './user.schema.js';
 
 import * as userService from './user.service.js';
 
-export const userRouter: FastifyPluginCallback = (fastify, opts, done) => {
+export const userRouter: FastifyPluginAsync = async (fastify, opts) => {
   fastify.get('/', async (request, reply) => {
     const users = await userService.findMany();
-    reply.send(users);
+    return users;
   });
 
   fastify.get('/:id', async (request, reply) => {
@@ -15,7 +15,6 @@ export const userRouter: FastifyPluginCallback = (fastify, opts, done) => {
 
     const user = await userService.findById(params);
 
-    reply.send(user);
+    return user;
   });
-  done();
 };

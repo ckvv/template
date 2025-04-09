@@ -10,8 +10,8 @@ declare namespace NodeJS {
 
 declare module 'fastify' {
   interface FastifyRequest {
-    user: {
+    user?: {
       id: number;
-    };
+    } | null;
   }
 }

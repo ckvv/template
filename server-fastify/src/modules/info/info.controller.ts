@@ -1,8 +1,7 @@
-import type { FastifyPluginCallback } from 'fastify';
+import type { FastifyPluginAsync } from 'fastify';
 
-export const infoRouter: FastifyPluginCallback = (fastify, opts, done) => {
-  fastify.get('/', (request, reply) => {
-    reply.send('hello world');
+export const infoRouter: FastifyPluginAsync = async (fastify, opts) => {
+  fastify.get('/', async (request, reply) => {
+    return `hello world`;
   });
-  done();
 };
