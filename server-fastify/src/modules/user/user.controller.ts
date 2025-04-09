@@ -1,8 +1,8 @@
 import type { FastifyPluginAsync } from 'fastify';
 import { getValidatedRouterParams } from '#utils';
-import { userSchema } from './user.schema.js';
+import { userSchema } from './user.schema.ts';
 
-import * as userService from './user.service.js';
+import * as userService from './user.service.ts';
 
 export const userRouter: FastifyPluginAsync = async (fastify, opts) => {
   fastify.get('/', async (request, reply) => {

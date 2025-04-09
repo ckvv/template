@@ -1,8 +1,8 @@
 import type { FastifyPluginAsync } from 'fastify';
 import { jwt, readValidatedBody } from '#utils';
 
-import { authSchema } from './auth.schema.js';
-import * as authService from './auth.service.js';
+import { authSchema } from './auth.schema.ts';
+import * as authService from './auth.service.ts';
 
 export const authRouter: FastifyPluginAsync = async (fastify, opts) => {
   fastify.post('/signin', async (request, reply) => {

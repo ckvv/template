@@ -1,3 +1,3 @@
-export { authRouter } from './auth/auth.controller.js';
-export { infoRouter } from './info/info.controller.js';
-export { userRouter } from './user/user.controller.js';
+export { authRouter } from './auth/auth.controller.ts';
+export { infoRouter } from './info/info.controller.ts';
+export { userRouter } from './user/user.controller.ts';

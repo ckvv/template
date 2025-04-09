@@ -1,5 +1,5 @@
 import type { TypeOf } from 'zod';
-import type { userSchema } from './user.schema.js';
+import type { userSchema } from './user.schema.ts';
 import { db, users } from '#db';
 import { eq } from 'drizzle-orm';
 

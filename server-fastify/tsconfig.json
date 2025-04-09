@@ -7,19 +7,22 @@
     "moduleResolution": "nodenext",
     "paths": {
       "#*": ["./src/*"],
-      "#modules": ["./src/modules/index.js"],
-      "#db": ["./src/db/index.js"],
-      "#middleware": ["./src/middleware/index.js"],
-      "#utils": ["./src/utils/index.js"],
-      "#type": ["./src/type.js"],
-      "#config": ["./src/config.js"],
-      "#constant": ["./src/constant/index.js"]
+      "#modules": ["./src/modules/index.ts"],
+      "#db": ["./src/db/index.ts"],
+      "#middleware": ["./src/middleware/index.ts"],
+      "#utils": ["./src/utils/index.ts"],
+      "#type": ["./src/type.ts"],
+      "#config": ["./src/config.ts"],
+      "#constant": ["./src/constant/index.ts"]
     },
     "resolveJsonModule": true,
     "strict": true,
     "outDir": "./dist",
     "forceConsistentCasingInFileNames": true,
-    "skipLibCheck": true
+    "verbatimModuleSyntax": true,
+    "erasableSyntaxOnly": true,
+    "skipLibCheck": true,
+    "rewriteRelativeImportExtensions": true
   },
   "include": ["src/**/*.ts"]
 }
