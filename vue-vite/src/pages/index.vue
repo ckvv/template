@@ -6,6 +6,6 @@ definePage({
 
 <template>
   <div class="flex justify-center items-center flex-col">
-    无需鉴权
+    功能介绍
   </div>
 </template>

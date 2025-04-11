@@ -1,4 +1,6 @@
 <template>
-  <RoutesList />
-  <RouterView />
+  <UApp>
+    <RoutesList />
+    <RouterView />
+  </UApp>
 </template>
