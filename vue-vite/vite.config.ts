@@ -16,10 +16,16 @@ export default defineConfig({
     VueRouter({
       routesFolder: 'src/pages',
     }),
+    // https://github.com/nuxt/ui/tree/v3/src/theme
     ui({
       ui: {
         colors: {
           primary: 'blue',
+        },
+        button: {
+          slots: {
+            base: 'cursor-pointer',
+          },
         },
       },
       components: {
