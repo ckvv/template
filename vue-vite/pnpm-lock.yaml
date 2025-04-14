@@ -10,7 +10,7 @@ importers:
     dependencies:
       '@nuxt/ui':
         specifier: ^3.0.2
-        version: 3.0.2(@babel/parser@7.27.0)(async-validator@4.2.5)(embla-carousel@8.6.0)(typescript@5.8.3)(vite@6.2.6(@types/node@22.14.1)(jiti@2.4.2)(lightningcss@1.29.2)(yaml@2.7.1))(zod@4.0.0-beta.20250412T085909)
+        version: 3.0.2(@babel/parser@7.27.0)(async-validator@4.2.5)(embla-carousel@8.6.0)(typescript@5.8.3)(vite@6.2.6(@types/node@22.14.1)(jiti@2.4.2)(lightningcss@1.29.2)(yaml@2.7.1))(zod@4.0.0-beta.20250414T061543)
       '@vueuse/core':
         specifier: ^13.1.0
         version: 13.1.0(vue@3.5.13(typescript@5.8.3))
@@ -28,7 +28,7 @@ importers:
         version: 4.5.0(vue@3.5.13(typescript@5.8.3))
       zod:
         specifier: next
-        version: 4.0.0-beta.20250412T085909
+        version: 4.0.0-beta.20250414T061543
     devDependencies:
       '@antfu/eslint-config':
         specifier: ^4.12.0
@@ -1314,8 +1314,8 @@ packages:
     peerDependencies:
       vue: ^3.5.0
 
-  '@zod/core@0.4.6':
-    resolution: {integrity: sha512-0IeEldTobOdkoJPyINVQgOHlgCWbpozSsDjdcd2+VcxKvf8T+SYLDVk7NKt0XJx3C0ImNXAXh3V3yIw46NJyQA==}
+  '@zod/core@0.5.0':
+    resolution: {integrity: sha512-9EW5fOng5558DM68WmVtecPzHuROdB5AcBVOBVqtPIup1quYRxxzwzT9+BPNX5Pr+so0wP/Hxv8+pCrBbjKQeg==}
 
   acorn-jsx@5.3.2:
     resolution: {integrity: sha512-rq9s+JNhf0IChjtDXxllJ7g41oZk5SlXtp0LHwyA5cejwn7vKmKp4pPri6YEePv2PU65sAsegbXtIinmDFDXgQ==}
@@ -3381,8 +3381,8 @@ packages:
     resolution: {integrity: sha512-GQHQqAopRhwU8Kt1DDM8NjibDXHC8eoh1erhGAJPEyveY9qqVeXvVikNKrDz69sHowPMorbPUrH/mx8c50eiBQ==}
     engines: {node: '>=18'}
 
-  zod@4.0.0-beta.20250412T085909:
-    resolution: {integrity: sha512-W4OjoCnF5XTuljw4X6Hh3Inp45Ug7mmCWzWfFPv+RZcSIAGz7OPqBKOEDtLjfnJAvoxvY3vO0SkxH1zr0Md/Ag==}
+  zod@4.0.0-beta.20250414T061543:
+    resolution: {integrity: sha512-1X7/cVHAWBt9jEIIg2Q2GFEApZy1VYe+YBxsjwVMmDZfMvn09CylsKLGZtfjZ/cwYrJha0OIWOh+MouaOj3Zdg==}
 
   zwitch@2.0.4:
     resolution: {integrity: sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A==}
@@ -4051,7 +4051,7 @@ snapshots:
       pathe: 2.0.3
       std-env: 3.9.0
 
-  '@nuxt/ui@3.0.2(@babel/parser@7.27.0)(async-validator@4.2.5)(embla-carousel@8.6.0)(typescript@5.8.3)(vite@6.2.6(@types/node@22.14.1)(jiti@2.4.2)(lightningcss@1.29.2)(yaml@2.7.1))(zod@4.0.0-beta.20250412T085909)':
+  '@nuxt/ui@3.0.2(@babel/parser@7.27.0)(async-validator@4.2.5)(embla-carousel@8.6.0)(typescript@5.8.3)(vite@6.2.6(@types/node@22.14.1)(jiti@2.4.2)(lightningcss@1.29.2)(yaml@2.7.1))(zod@4.0.0-beta.20250414T061543)':
     dependencies:
       '@iconify/vue': 4.3.0(vue@3.5.13(typescript@5.8.3))
       '@internationalized/date': 3.8.0
@@ -4098,7 +4098,7 @@ snapshots:
       vue: 3.5.13(typescript@5.8.3)
       vue-router: 4.5.0(vue@3.5.13(typescript@5.8.3))
     optionalDependencies:
-      zod: 4.0.0-beta.20250412T085909
+      zod: 4.0.0-beta.20250414T061543
     transitivePeerDependencies:
       - '@azure/app-configuration'
       - '@azure/cosmos'
@@ -4781,7 +4781,7 @@ snapshots:
     dependencies:
       vue: 3.5.13(typescript@5.8.3)
 
-  '@zod/core@0.4.6': {}
+  '@zod/core@0.5.0': {}
 
   acorn-jsx@5.3.2(acorn@8.14.1):
     dependencies:
@@ -7042,8 +7042,8 @@ snapshots:
 
   yoctocolors@2.1.1: {}
 
-  zod@4.0.0-beta.20250412T085909:
+  zod@4.0.0-beta.20250414T061543:
     dependencies:
-      '@zod/core': 0.4.6
+      '@zod/core': 0.5.0
 
   zwitch@2.0.4: {}
