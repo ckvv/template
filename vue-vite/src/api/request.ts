@@ -9,6 +9,9 @@ export const useFetch = createFetch({
     async beforeFetch(ctx) {
       const headers = new Headers(ctx.options.headers || {});
       headers.set('Content-Type', 'application/json');
+      headers.set('Authorization', `${localStorage.getItem('token')}`);
+
+      ctx.options.headers = headers;
       return ctx;
     },
     async afterFetch(ctx) {

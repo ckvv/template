@@ -1,6 +1,8 @@
 import * as z from 'zod';
 
-export const Sign = z.object({
+export const signSchema = z.object({
   username: z.string().min(4),
   password: z.string().min(4),
 });
+
+export type SignSchema = z.infer<typeof signSchema>;

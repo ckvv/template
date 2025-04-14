@@ -10,11 +10,16 @@ const app = new Hono<BlankEnv>();
 app.post('/signin', async (c) => {
   const params = await readValidatedBody(c, authSchema.signin);
   const users = await authService.signin(params);
-
-  setCookie(c, 'token', await jwt.sign({
+  const token = await jwt.sign({
     id: users.id,
-  }));
-  return c.json(users);
+  });
+  setCookie(c, 'token', token, {
+    maxAge: 3600 * 24,
+  });
+  return c.json({
+    ...users,
+    token,
+  });
 });
 
 app.post('/signup', async (c) => {
