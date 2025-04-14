@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { authAPI, useFetch } from '@/api';
+import { authAPI } from '@/api';
 import { Sign } from '@/constant/schema';
 import { router, useRoute } from '@/router';
 import { useSignStore } from '@/stores/sign';
@@ -19,17 +19,14 @@ const user = ref({
   password: '',
 });
 
-const { execute: signin, isFetching: isSigning } = useFetch({
-  handler: () => authAPI.signin(user.value),
-  onFetchFinally(result) {
-    if (result.code !== 0) {
-      toast.add({ description: result.message, color: 'error' });
-      return;
-    }
-    toast.add({ description: '登录成功', color: 'success' });
-    sign.signIn(result.data);
-    router.push({ path: route.query?.to as string ?? '/auth' });
-  },
+const { execute: signin, isFetching: isSigning, onFetchResponse: onSignin } = authAPI.signin(user);
+
+onSignin(({ data }) => {
+  if (data?.code !== 0)
+    return;
+  toast.add({ description: '登录成功', color: 'success' });
+  sign.signIn(data?.data);
+  router.push({ path: route.query?.to as string ?? '/auth' });
 });
 
 function signinGithub() {
@@ -43,7 +40,7 @@ function _signup() {
 
 <template>
   <div class="text-center select-none">
-    <UForm :schema="Sign" :state="user" class="w-2xl flex flex-col gap-2 m-auto" @submit="signin">
+    <UForm :schema="Sign" :state="user" class="w-2xl flex flex-col gap-2 m-auto" @submit="signin()">
       <UFormField label="Username" name="username" class="text-left">
         <UInput v-model="user.username" class="w-full" />
       </UFormField>

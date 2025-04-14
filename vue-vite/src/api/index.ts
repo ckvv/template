@@ -1,15 +1,5 @@
-import { ofetch } from 'ofetch';
-
-export { useFetch } from '@/composition/useFetch';
-const request = ofetch.create({
-  baseURL: 'http://template.ckvv.net/',
-});
+import { useFetch } from './request';
 
 export const authAPI = {
-  signin(user: any) {
-    return request('/auth/signin', {
-      method: 'POST',
-      body: user,
-    });
-  },
+  signin: (user: any) => useFetch('/auth/signin').post(user),
 };
