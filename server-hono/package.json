@@ -30,6 +30,7 @@
   },
   "dependencies": {
     "@hono/node-server": "^1.14.1",
+    "@logtail/pino": "^0.5.3",
     "@neondatabase/serverless": "^1.0.0",
     "dotenv": "^16.5.0",
     "drizzle-orm": "^0.41.0",
@@ -46,7 +47,7 @@
     "eslint": "^9.24.0",
     "tsx": "^4.19.3",
     "typescript": "^5.8.3",
-    "wrangler": "^4.10.0"
+    "wrangler": "^4.11.0"
   },
   "pnpm": {
     "onlyBuiltDependencies": [

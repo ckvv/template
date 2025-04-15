@@ -7,7 +7,7 @@ if (token) {
   localStorage.setItem('token', token);
 }
 export const useFetch = createFetch({
-  baseUrl: 'http://template.ckvv.net/',
+  baseUrl: '//template.ckvv.net/',
   options: {
     immediate: false,
     async beforeFetch(ctx) {

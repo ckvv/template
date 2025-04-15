@@ -62,16 +62,15 @@ app.get('/github/callback', async (c) => {
 
   const githubUser = await (await fetch(`https://api.github.com/user`, {
     headers: {
-      accept: 'application/json',
-      Authorization: `${response.token_type} ${response.access_token}`,
+      'accept': 'application/json',
+      'Authorization': `${response.token_type} ${response.access_token}`,
+      'User-Agent': 'VUE-VITE',
     },
   })).json();
+
   if (githubUser.error) {
     throw new CustomError('PERMISSION_DENIED', response.error_description);
   }
-
-  c.var.logger.info(response);
-  c.var.logger.info(githubUser);
 
   const { id, login, email } = githubUser;
 
@@ -87,7 +86,7 @@ app.get('/github/callback', async (c) => {
     maxAge: 3600 * 24,
   });
 
-  return c.redirect(`http://localhost:5173/about/?token=${token}`, 301);
+  return c.redirect(`http://localhost:5173/about/?token=${token}`);
 });
 
 export default app;
