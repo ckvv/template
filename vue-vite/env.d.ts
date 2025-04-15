@@ -11,4 +11,7 @@ declare global {
       message?: any;
     };
   }
+  interface RequestInit {
+    _toast?: boolean;
+  }
 }

@@ -21,7 +21,7 @@ export const useFetch = createFetch({
     async afterFetch(ctx) {
       if (ctx.response.headers.get('content-type') === 'application/json') {
         const result = await ctx.response.json();
-        if (result.code !== 0) {
+        if (result.code !== 0 && ctx.context.options?._toast !== false) {
           toast.add({ description: result.message, color: 'error' });
         }
         ctx.response.data = result;

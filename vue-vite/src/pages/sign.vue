@@ -57,7 +57,10 @@ async function onSubmit() {
 }
 
 function signinGithub() {
-  window.open('https://github.com/login/oauth/authorize?client_id=Ov23liEYh2qc0fubOEEd');
+  window.open(`https://github.com/login/oauth/authorize?${new URLSearchParams({
+    client_id: 'Ov23liEYh2qc0fubOEEd',
+    redirect_uri: `${location.origin}/about`,
+  })}`);
 }
 
 function handlerSwitch(value?: TYPE) {

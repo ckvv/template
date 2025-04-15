@@ -1,4 +1,6 @@
+import type { RouteLocationRaw } from '@/router';
 import { authAPI } from '@/api';
+import { router } from '@/router';
 import { defineStore } from 'pinia';
 import { computed, ref } from 'vue';
 
@@ -21,8 +23,12 @@ export const useSignStore = defineStore('user', () => {
     localStorage.setItem('token', token!);
   }
 
-  function signOut() {
+  async function signOut(options?: { to?: RouteLocationRaw }) {
     user.value = {};
+    localStorage.removeItem('token');
+    if (options?.to) {
+      router.push(options?.to);
+    }
   }
 
   return { user, isSign, signIn, signOut, fetchUserInfo };
