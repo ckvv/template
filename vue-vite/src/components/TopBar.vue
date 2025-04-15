@@ -12,5 +12,8 @@ const items = routes.map((v) => {
 <template>
   <div class="flex justify-center items-center">
     <UNavigationMenu :items="items" class="justify-center" />
+    <UButton class="absolute right-4" to="https://github.com/ckvv/template" target="_blank">
+      Github
+    </UButton>
   </div>
 </template>

@@ -31,6 +31,7 @@ app.post('/signup', async (c) => {
 
 app.post('/signout', async (c) => {
   deleteCookie(c, 'token');
+  return c.json({});
 });
 
 app.get('/me', async (c) => {
@@ -86,7 +87,7 @@ app.get('/github/callback', async (c) => {
     maxAge: 3600 * 24,
   });
 
-  return c.redirect(`http://localhost:5173/about/?token=${token}`);
+  return c.redirect(new URL(`/about?token=${token}`, 'https://template-page.ckvv.net/'));
 });
 
 export default app;
