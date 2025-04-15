@@ -2,17 +2,14 @@
 import { useSignStore } from '@/stores/sign';
 
 definePage({
-  name: 'about',
-  meta: {
-    auth: true,
-  },
+  name: '关于我',
 });
 
 const sign = useSignStore();
 </script>
 
 <template>
-  <div class="about">
-    <HelloWorld :msg="`hello: ${sign.user.id}`" />
+  <div class="me text-center">
+    {{ sign.user }}
   </div>
 </template>

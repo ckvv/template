@@ -11,6 +11,8 @@ export const users = pgTable('users', {
   username: varchar().notNull(),
   password: varchar().notNull(),
   salt: varchar().notNull(),
+  source: varchar(),
+  sourceid: varchar(),
   ...timestamps,
 }, table => [
   unique('users_username_unique').on(table.username),

@@ -30,6 +30,9 @@ export function formatMiddleware() {
         return;
       }
 
+      if (c.res.status !== 200) {
+        return;
+      }
       const type = c.res.headers.get('Content-Type')?.split(';')[0].trim();
 
       switch (type) {
@@ -41,7 +44,7 @@ export function formatMiddleware() {
           break;
         case 'text/plain':
           c.res = c.json({
-            code: 0,
+            code: 10,
             data: await c.res.text(),
           });
           break;

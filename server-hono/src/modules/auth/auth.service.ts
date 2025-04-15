@@ -3,7 +3,7 @@ import type { authSchema } from './auth.schema.ts';
 import { db, users } from '#db';
 import { CustomError, getRandomStr, toHash } from '#utils';
 
-import { eq } from 'drizzle-orm';
+import { and, eq } from 'drizzle-orm';
 
 export async function signin(params: TypeOf<typeof authSchema.signin>) {
   const value = await db.query.users.findFirst({
@@ -46,4 +46,27 @@ export async function me(params: TypeOf<typeof authSchema.me>) {
     },
     where: eq(users.id, params.id),
   });
+}
+
+export async function signupGithubUser(params: TypeOf<typeof authSchema.signupGithubUser>) {
+  const gituser = await db.query.users.findFirst({
+    where: and(eq(users.sourceid, params.sourceid)),
+  });
+  if (gituser) {
+    return gituser;
+  }
+
+  const _user = await db.query.users.findFirst({
+    where: and(eq(users.username, params.username)),
+  });
+
+  const username = !_user ? params.username : `${params.username}_${getRandomStr(16)}`;
+
+  return (await db.insert(users).values({
+    username,
+    password: '',
+    salt: '',
+    source: 'github',
+    sourceid: params.sourceid,
+  }).returning()).at(0)!;
 }

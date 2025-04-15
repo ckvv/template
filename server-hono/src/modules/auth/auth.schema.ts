@@ -12,4 +12,11 @@ export const authSchema = {
   me: z.object({
     id: z.coerce.number(),
   }),
+  githubCallback: z.object({
+    code: z.string(),
+  }),
+  signupGithubUser: z.object({
+    username: z.string(),
+    sourceid: z.string(),
+  }),
 };

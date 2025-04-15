@@ -5,6 +5,7 @@ export async function validated<T extends ZodType<any, any>>(c: Context, schema:
   return schema.parse({
     ...await c.req.json(),
     ...c.req.param(),
+    ...c.req.query(),
   });
 }
 export async function readValidatedBody<T extends ZodType<any, any>>(c: Context, schema: T): Promise<TypeOf<T>> {
@@ -13,4 +14,8 @@ export async function readValidatedBody<T extends ZodType<any, any>>(c: Context,
 
 export async function getValidatedRouterParams<T extends ZodType<any, any>>(c: Context, schema: T): Promise<TypeOf<T>> {
   return schema.parse(c.req.param());
+}
+
+export async function getValidatedQuery<T extends ZodType<any, any>>(c: Context, schema: T): Promise<TypeOf<T>> {
+  return schema.parse(c.req.query());
 }

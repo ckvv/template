@@ -2,6 +2,10 @@ import { createFetch } from '@vueuse/core';
 
 const toast = useToast();
 
+const token = new URLSearchParams(location.search).get('token');
+if (token) {
+  localStorage.setItem('token', token);
+}
 export const useFetch = createFetch({
   baseUrl: 'http://template.ckvv.net/',
   options: {

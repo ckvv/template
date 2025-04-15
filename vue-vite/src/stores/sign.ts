@@ -16,9 +16,9 @@ export const useSignStore = defineStore('user', () => {
     user.value = data.value?.data as any;
   }
 
-  function signIn(data: User) {
-    user.value = data;
-    localStorage.setItem('token', data.token!);
+  function signIn({ token, ...value }: User) {
+    user.value = value;
+    localStorage.setItem('token', token!);
   }
 
   function signOut() {

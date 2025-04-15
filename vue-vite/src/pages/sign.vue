@@ -8,7 +8,10 @@ import { ref, useTemplateRef } from 'vue';
 type TYPE = 'signin' | 'signup';
 
 definePage({
-  name: 'sign',
+  name: '登录|注册',
+  meta: {
+    auth: false,
+  },
 });
 
 const formRef = useTemplateRef('formRef');
@@ -29,6 +32,7 @@ onSignin(({ data }) => {
   toast.add({ description: '登录成功', color: 'success' });
   signStore.signIn(data?.data);
   router.push({ path: route.query?.to as string ?? '/auth' });
+  resetForm();
 });
 
 const { execute: signup, isFetching: isSignUp, onFetchResponse: onSignUp } = authAPI.signup(user);
@@ -39,13 +43,13 @@ onSignUp(({ data }) => {
   handlerSwitch('signin');
 });
 
-function onSubmit() {
+async function onSubmit() {
   switch (type.value) {
     case 'signin':
-      signin();
+      await signin();
       break;
     case 'signup':
-      signup();
+      await signup();
       break;
     default:
       break;
@@ -53,24 +57,31 @@ function onSubmit() {
 }
 
 function signinGithub() {
-  window.open('https://github.com/ckvv');
+  window.open('https://github.com/login/oauth/authorize?client_id=Ov23liEYh2qc0fubOEEd');
 }
 
 function handlerSwitch(value?: TYPE) {
-  formRef.value?.setErrors([]);
-
+  resetForm();
   type.value = value || type.value === 'signup' ? 'signin' : 'signup';
+}
+
+function resetForm() {
+  formRef.value?.setErrors([]);
+  user.value = {
+    username: '',
+    password: '',
+  };
 }
 </script>
 
 <template>
-  <div class="text-center select-none">
+  <div class="text-center">
     <UForm ref="formRef" :schema="signSchema" :state="user" class="w-2xl max-w-full flex flex-col gap-2 m-auto" @submit="onSubmit()">
       <UFormField label="用户名" name="username" class="text-left">
         <UInput v-model="user.username" class="w-full" />
       </UFormField>
       <UFormField label="密码" name="password" class="text-left">
-        <UInput v-model="user.password" class="w-full" />
+        <UInput v-model="user.password" class="w-full" type="password" />
       </UFormField>
       <div class="flex flex-col gap-2">
         <UButton class="w-full justify-center" type="submit" :loading="isSignin || isSignUp">

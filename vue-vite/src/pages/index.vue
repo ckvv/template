@@ -1,11 +1,14 @@
 <script setup lang="ts">
 definePage({
-  name: 'index',
+  name: '首页',
+  meta: {
+    auth: false,
+  },
 });
 </script>
 
 <template>
   <div class="flex justify-center items-center flex-col">
-    功能介绍
+    VUE 项目启动模版
   </div>
 </template>

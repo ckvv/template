@@ -3,7 +3,7 @@
 
 <template>
   <UApp :toaster="{ position: 'top-right' }">
-    <RoutesList />
+    <TopBar />
     <RouterView />
   </UApp>
 </template>

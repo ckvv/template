@@ -2,7 +2,7 @@ import { CustomError, jwt } from '#utils';
 import { getCookie } from 'hono/cookie';
 import { createMiddleware } from 'hono/factory';
 
-const whiteList = ['/auth/signup', '/auth/signin', '/'];
+const whiteList = ['/', '/auth/signup', '/auth/signin', '/auth/github/callback'];
 
 function isInWhiteList(path: string) {
   return whiteList.includes(path);

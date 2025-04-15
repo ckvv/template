@@ -22,10 +22,10 @@ export const router = createRouter({
 });
 
 router.beforeEach((to, from, next) => {
-  if (to.meta?.auth === true) {
+  if (to.meta?.auth !== false) {
     const { user } = useSignStore();
-    if (!user.id) {
-      return next({ name: `sign`, query: { to: to.path } });
+    if (!user?.id) {
+      return next({ name: `登录|注册`, query: { to: to.path } });
     }
   }
   next();
