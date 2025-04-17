@@ -33,9 +33,9 @@
     "@logtail/pino": "^0.5.3",
     "@neondatabase/serverless": "^1.0.0",
     "dotenv": "^16.5.0",
-    "drizzle-orm": "^0.41.0",
+    "drizzle-orm": "^0.42.0",
     "fast-jwt": "^6.0.1",
-    "hono": "^4.7.6",
+    "hono": "^4.7.7",
     "pg": "^8.14.1",
     "pino": "^9.6.0",
     "zod": "4.0.0-beta.20250414T061543"
@@ -43,11 +43,11 @@
   "devDependencies": {
     "@antfu/eslint-config": "^4.12.0",
     "@types/node": "22.14.1",
-    "drizzle-kit": "^0.30.6",
+    "drizzle-kit": "^0.31.0",
     "eslint": "^9.24.0",
     "tsx": "^4.19.3",
     "typescript": "^5.8.3",
-    "wrangler": "^4.11.0"
+    "wrangler": "^4.11.1"
   },
   "pnpm": {
     "onlyBuiltDependencies": [
