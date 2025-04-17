@@ -3,11 +3,11 @@
 
 ## 创建项目的模板
 
-+ [ ] bin
++ [x] bin 参考 <https://github.com/ckpack/git-dl>
 + [ ] 🧠 client-electron
 + [ ] 🧠 client-tauri
-+ [ ] lib-js
-+ [ ] lib-vue
++ [x] lib-js
++ [x] lib-vue 参考 <https://github.com/ckpack/v-ui>
 + [ ] 🧠 react-next
 + [ ] 🧠 react-vite
 + [ ] server-artus
@@ -20,7 +20,7 @@
 + [x] 🚧 server-nest
 + [ ] server-nitro
 + [x] 🚧 vue-nuxt
-+ [x] 🚧 vue-vite
++ [x] vue-vite
 
 ## 下载
 
@@ -35,19 +35,21 @@ git-dl ckvv/template -s "vue-vite"
 ```
 
 ## 架构
-数据库: PG
-ORM: drizzle sequelize prisma
-开发语言: TS
+
++ 数据库: PG
++ ORM: drizzle sequelize prisma
++ 开发语言: TS
 
 ## 功能
 
-登录
-注册
-JWT
-登录后可以查看当前注册的用户
++ 登录
++ 注册
++ JWT
++ 查看当前登录用户
 
 ## 部署方案
 
-部署选择: vercel, nuxthub, netlify
-后端基于 hono | h3 | nitro 部署在 cloudflare
-前端: 部署在 https://nuxt.com/deploy
++ [cloudflare](https://dash.cloudflare.com/)
++ [vercel](https://vercel.com/)
++ [nuxthub](https://admin.hub.nuxt.com/)
++ [netlify](https://app.netlify.com/)
