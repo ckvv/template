@@ -12,7 +12,7 @@
 + [ ] 🧠 react-vite
 + [ ] server-artus
 + [ ] server-elysia
-+ [ ] server-fastapi
++ [ ] server-fastapi(🐍)
 + [x] server-fastify
 + [x] server-h3
 + [x] server-hono
