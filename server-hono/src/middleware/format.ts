@@ -44,7 +44,7 @@ export function formatMiddleware() {
           break;
         case 'text/plain':
           c.res = c.json({
-            code: 10,
+            code: 0,
             data: await c.res.text(),
           });
           break;
