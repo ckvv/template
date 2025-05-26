@@ -1,6 +1,6 @@
-import { useSignStore } from '@/stores/sign';
 import { createRouter, createWebHistory } from 'vue-router';
 import { routes } from 'vue-router/auto-routes';
+import { useSignStore } from '@/stores/sign';
 
 export { type RouteLocationRaw, useLink, useRoute, useRouter } from 'vue-router';
 

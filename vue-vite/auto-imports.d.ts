@@ -19,6 +19,7 @@ declare global {
   const inputIdInjectionKey: typeof import('./node_modules/@nuxt/ui/dist/runtime/composables/useFormField.js')['inputIdInjectionKey']
   const kbdKeysMap: typeof import('./node_modules/@nuxt/ui/dist/runtime/composables/useKbd.js')['kbdKeysMap']
   const localeContextInjectionKey: typeof import('./node_modules/@nuxt/ui/dist/runtime/composables/useLocale.js')['localeContextInjectionKey']
+  const portalTargetInjectionKey: typeof import('./node_modules/@nuxt/ui/dist/runtime/composables/usePortal.js')['portalTargetInjectionKey']
   const useAppConfig: typeof import('./node_modules/@nuxt/ui/dist/runtime/vue/composables/useAppConfig.js')['useAppConfig']
   const useAvatarGroup: typeof import('./node_modules/@nuxt/ui/dist/runtime/composables/useAvatarGroup.js')['useAvatarGroup']
   const useButtonGroup: typeof import('./node_modules/@nuxt/ui/dist/runtime/composables/useButtonGroup.js')['useButtonGroup']
@@ -27,6 +28,7 @@ declare global {
   const useKbd: typeof import('./node_modules/@nuxt/ui/dist/runtime/composables/useKbd.js')['useKbd']
   const useLocale: typeof import('./node_modules/@nuxt/ui/dist/runtime/composables/useLocale.js')['useLocale']
   const useOverlay: typeof import('./node_modules/@nuxt/ui/dist/runtime/composables/useOverlay.js')['useOverlay']
+  const usePortal: typeof import('./node_modules/@nuxt/ui/dist/runtime/composables/usePortal.js')['usePortal']
   const useToast: typeof import('./node_modules/@nuxt/ui/dist/runtime/composables/useToast.js')['useToast']
 }
 // for type re-export

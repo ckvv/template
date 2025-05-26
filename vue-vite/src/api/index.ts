@@ -1,5 +1,5 @@
-import type { SignSchema } from '@/constant/schema';
 import type { MaybeRef } from 'vue';
+import type { SignSchema } from '@/constant/schema';
 import { useFetch } from './request';
 
 export const authAPI = {

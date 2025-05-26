@@ -1,9 +1,9 @@
 <script setup lang="ts">
+import { ref, useTemplateRef } from 'vue';
 import { authAPI } from '@/api';
 import { signSchema } from '@/constant/schema';
 import { router, useRoute } from '@/router';
 import { useSignStore } from '@/stores/sign';
-import { ref, useTemplateRef } from 'vue';
 
 type TYPE = 'signin' | 'signup';
 
