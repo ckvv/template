@@ -1,14 +1,11 @@
+import type { Middleware } from 'h3';
 import { logger } from '#utils';
-import { defineEventHandler } from 'h3';
 
-export function loggerMiddleware() {
-  return defineEventHandler({
-    onRequest: (event) => {
-      logger.info(`Request: ${event.url}`);
-    },
-    onBeforeResponse: (event, _response) => {
-      logger.info(`Response: ${event.url}`);
-    },
-    handler: () => {},
-  });
-}
+export function loggerMiddleware(): Middleware {
+  return async (event, next) => {
+    logger.info(`Request: ${event.url}`);
+    const rawBody = await next();
+    logger.info(`Response: ${event.url}`);
+    return rawBody;
+  };
+};

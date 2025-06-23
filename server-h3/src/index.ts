@@ -3,9 +3,9 @@ import { config } from '#config';
 import { authMiddleware, corsMiddleware, loggerMiddleware } from '#middleware';
 import { authRouter, infoRouter, userRouter } from '#modules';
 import { logger } from '#utils';
-import { createH3, toNodeHandler, withBase } from 'h3';
+import { H3, toNodeHandler, withBase } from 'h3';
 
-const app = createH3({
+const app = new H3({
   onError: (error) => {
     logger.error(error);
   },

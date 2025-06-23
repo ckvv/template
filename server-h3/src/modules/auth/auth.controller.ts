@@ -1,9 +1,9 @@
 import { jwt } from '#utils';
-import { createH3, deleteCookie, readValidatedBody, setCookie } from 'h3';
+import { deleteCookie, H3, readValidatedBody, setCookie } from 'h3';
 import { authSchema } from './auth.schema.ts';
 import * as authService from './auth.service.ts';
 
-export const app = createH3();
+export const app = new H3();
 
 app.post('/signin', async (event) => {
   const params = await readValidatedBody(event, authSchema.signin.parse);
@@ -13,6 +13,10 @@ app.post('/signin', async (event) => {
     id: users.id,
   }));
   return users;
+}, {
+  meta: {
+    auth: true,
+  },
 });
 
 app.post('/signup', async (event) => {

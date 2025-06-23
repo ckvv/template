@@ -1,8 +1,8 @@
-import { createH3, getValidatedRouterParams } from 'h3';
+import { getValidatedRouterParams, H3 } from 'h3';
 import { userSchema } from './user.schema.ts';
 import * as userService from './user.service.ts';
 
-export const app = createH3();
+export const app = new H3();
 
 app.get('/', async (_event) => {
   const users = await userService.findMany();
