@@ -1,6 +1,6 @@
 import { createServer } from 'node:http';
 import { config } from '#config';
-import { authMiddleware, corsMiddleware, loggerMiddleware } from '#middleware';
+import { corsMiddleware, loggerMiddleware } from '#middleware';
 import { authRouter, infoRouter, userRouter } from '#modules';
 import { logger } from '#utils';
 import { H3, toNodeHandler, withBase } from 'h3';
@@ -8,16 +8,19 @@ import { H3, toNodeHandler, withBase } from 'h3';
 const app = new H3({
   onError: (error) => {
     logger.error(error);
+    return {
+      status: error.status,
+      message: error.data ?? error.message,
+    };
   },
 });
 
 app.use(corsMiddleware());
 app.use(loggerMiddleware());
-app.use(authMiddleware());
 
-app.use('/**', withBase('/info', infoRouter.handler));
-app.use('/auth/**', withBase('/auth', authRouter.handler));
-app.use('/user/**', withBase('/user', userRouter.handler));
+app.all('/', withBase('/info', infoRouter.handler));
+app.all('/auth/**', withBase('/auth', authRouter.handler));
+app.all('/user/**', withBase('/user', userRouter.handler));
 
 createServer(toNodeHandler(app))
   .listen(config.PORT)

@@ -1,3 +1,4 @@
+import { authMiddleware } from '#middleware';
 import { jwt } from '#utils';
 import { deleteCookie, H3, readValidatedBody, setCookie } from 'h3';
 import { authSchema } from './auth.schema.ts';
@@ -13,10 +14,6 @@ app.post('/signin', async (event) => {
     id: users.id,
   }));
   return users;
-}, {
-  meta: {
-    auth: true,
-  },
 });
 
 app.post('/signup', async (event) => {
@@ -27,6 +24,8 @@ app.post('/signup', async (event) => {
 
 app.post('/signout', async (event) => {
   deleteCookie(event, 'token');
+}, {
+  middleware: [authMiddleware()],
 });
 
 app.get('/me', async (event) => {
@@ -34,4 +33,6 @@ app.get('/me', async (event) => {
     id: event.context.user.id,
   });
   return user;
+}, {
+  middleware: [authMiddleware()],
 });
