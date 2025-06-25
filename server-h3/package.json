@@ -29,7 +29,7 @@
     "db": "drizzle-kit"
   },
   "dependencies": {
-    "drizzle-kit": "^0.31.1",
+    "drizzle-kit": "^0.31.2",
     "drizzle-orm": "^0.44.2",
     "fast-jwt": "^6.0.2",
     "h3": "npm:h3-nightly@2.0.0-20250620-182741-207b350",
@@ -39,7 +39,8 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "^4.16.1",
-    "@types/node": "24.0.3",
+    "@types/node": "24.0.4",
+    "dotenv": "^16.5.0",
     "eslint": "^9.29.0",
     "tsx": "^4.20.3",
     "typescript": "^5.8.3"
