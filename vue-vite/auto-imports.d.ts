@@ -10,6 +10,7 @@ declare global {
   const buttonGroupInjectionKey: typeof import('./node_modules/@nuxt/ui/dist/runtime/composables/useButtonGroup.js')['buttonGroupInjectionKey']
   const defineLocale: typeof import('./node_modules/@nuxt/ui/dist/runtime/composables/defineLocale.js')['defineLocale']
   const defineShortcuts: typeof import('./node_modules/@nuxt/ui/dist/runtime/composables/defineShortcuts.js')['defineShortcuts']
+  const extendLocale: typeof import('./node_modules/@nuxt/ui/dist/runtime/composables/defineLocale.js')['extendLocale']
   const extractShortcuts: typeof import('./node_modules/@nuxt/ui/dist/runtime/composables/defineShortcuts.js')['extractShortcuts']
   const formBusInjectionKey: typeof import('./node_modules/@nuxt/ui/dist/runtime/composables/useFormField.js')['formBusInjectionKey']
   const formFieldInjectionKey: typeof import('./node_modules/@nuxt/ui/dist/runtime/composables/useFormField.js')['formFieldInjectionKey']
