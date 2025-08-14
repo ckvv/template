@@ -3,7 +3,7 @@
   "type": "module",
   "version": "1.0.0",
   "private": false,
-  "packageManager": "pnpm@10.8.0",
+  "packageManager": "pnpm@10.14.0+sha512.ad27a79641b49c3e481a16a805baa71817a04bbe06a38d17e60e2eaee83f6a146c6a688125f5792e48dd5ba30e7da52a5cda4c3992b9ccf333f9ce223af84748",
   "description": "Create the startup template for the TS lib library.",
   "author": "ckvv",
   "license": "MIT",
@@ -27,18 +27,18 @@
     "publish:npm": "npm run build && npm publish --registry https://registry.npmjs.org/ --access public"
   },
   "dependencies": {
-    "vue": "^3.5.13"
+    "vue": "^3.5.18"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^4.12.0",
-    "@types/node": "^22.14.1",
-    "eslint": "^9.25.0",
-    "lint-staged": "^15.5.1",
-    "simple-git-hooks": "^2.12.1",
-    "tsdown": "^0.8.1",
-    "typescript": "^5.8.3",
-    "unplugin-vue": "6.1.0",
-    "vitest": "^3.1.1"
+    "@antfu/eslint-config": "^5.2.1",
+    "@types/node": "^24.2.1",
+    "eslint": "^9.33.0",
+    "lint-staged": "^16.1.5",
+    "simple-git-hooks": "^2.13.1",
+    "tsdown": "^0.14.1",
+    "typescript": "^5.9.2",
+    "unplugin-vue": "7.0.1",
+    "vitest": "^3.2.4"
   },
   "pnpm": {
     "onlyBuiltDependencies": [
