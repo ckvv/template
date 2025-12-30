@@ -30,7 +30,7 @@ app.post('/signout', async (event) => {
 
 app.get('/me', async (event) => {
   const user = await authService.me({
-    id: event.context.user.id,
+    id: event.context.user!.id,
   });
   return user;
 }, {

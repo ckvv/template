@@ -15,4 +15,9 @@ declare module 'h3' {
   interface RouteOptions {
     auth?: boolean;
   }
+  interface H3EventContext {
+    user?: {
+      id: number;
+    };
+  }
 }

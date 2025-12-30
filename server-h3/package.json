@@ -30,19 +30,19 @@
   },
   "dependencies": {
     "drizzle-kit": "^0.31.4",
-    "drizzle-orm": "^0.44.3",
+    "drizzle-orm": "^0.44.5",
     "fast-jwt": "^6.0.2",
-    "h3": "npm:h3-nightly@2.0.0-20250620-182741-207b350",
+    "h3": "npm:h3-nightly@2.0.0-20250908-082055-1d732b3",
     "pg": "^8.16.3",
-    "pino": "^9.7.0",
-    "zod": "^4.0.5"
+    "pino": "^9.11.0",
+    "zod": "^4.1.11"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^4.17.0",
-    "@types/node": "24.0.14",
-    "dotenv": "^17.2.0",
-    "eslint": "^9.31.0",
-    "tsx": "^4.20.3",
-    "typescript": "^5.8.3"
+    "@antfu/eslint-config": "^5.4.1",
+    "@types/node": "24.5.2",
+    "dotenv": "^17.2.2",
+    "eslint": "^9.36.0",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.2"
   }
 }
