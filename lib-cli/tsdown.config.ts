@@ -5,6 +5,6 @@ export default defineConfig({
   target: 'ESNext',
   clean: true,
   dts: true,
-  platform: 'neutral',
+  platform: 'node',
   format: 'esm',
 })

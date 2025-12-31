@@ -4,8 +4,13 @@
     "lib": [
       "ESNext"
     ],
-    "module": "ESNext",
-    "moduleResolution": "bundler",
+    "module": "NodeNext",
+    "moduleResolution": "nodenext",
+    "paths": {
+      "#*": ["./src/*"],
+      "#command": ["./src/command/index.ts"],
+      "#command/*": ["./src/command/*"]
+    },
     "resolveJsonModule": true,
     "strict": true,
     "declaration": true,

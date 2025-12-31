@@ -1,5 +1,5 @@
 {
-  "name": "lib-js",
+  "name": "lib-cli",
   "type": "module",
   "version": "1.0.0",
   "private": false,
@@ -8,31 +8,43 @@
   "author": "ckvv",
   "license": "MIT",
   "repository": "https://github.com/ckvv/template",
+  "imports": {
+    "#command": "./src/command/index.js",
+    "#command/*": "./src/command/*"
+  },
   "exports": {
-    ".": "./dist/index.js",
+    ".": "./dist/index.mjs",
     "./package.json": "./package.json"
   },
-  "main": "./dist/index.js",
-  "module": "./dist/index.js",
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
+  "bin": {
+    "index": "./dist/index.mjs"
+  },
   "files": [
     "dist"
   ],
   "scripts": {
-    "commit:generate": "node --experimental-strip-types src/index.ts",
     "dev": "node --import=tsx src/index.ts",
     "build": "tsdown",
     "typecheck": "tsc --noEmit",
     "lint": "eslint --fix",
     "publish:npm": "npm run build && npm publish --registry https://registry.npmjs.org/ --access public"
   },
+  "dependencies": {
+    "commander": "^14.0.2",
+    "consola": "^3.4.2"
+  },
   "devDependencies": {
-    "@types/node": "^24",
     "@antfu/eslint-config": "^6.7.3",
+    "@commander-js/extra-typings": "^14.0.0",
+    "@types/node": "^24",
     "eslint": "^9.39.2",
     "lint-staged": "^16.2.7",
     "simple-git-hooks": "^2.13.1",
     "tsdown": "^0.18.3",
+    "tsx": "4.21.0",
     "typescript": "^5.9.3"
   },
   "simple-git-hooks": {
