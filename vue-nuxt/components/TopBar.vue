@@ -5,7 +5,7 @@ const items = ref<NavigationMenuItem[]>([
   {
     label: 'Guide',
     icon: 'i-lucide-book-open',
-    to: '/getting-started',
+    to: '/docs/getting-started',
     children: [
       {
         label: 'Introduction',
@@ -37,69 +37,69 @@ const items = ref<NavigationMenuItem[]>([
   {
     label: 'Composables',
     icon: 'i-lucide-database',
-    to: '/composables',
+    to: '/docs/composables',
     children: [
       {
         label: 'defineShortcuts',
         icon: 'i-lucide-file-text',
         description: 'Define shortcuts for your application.',
-        to: '/composables/define-shortcuts'
+        to: '/docs/composables/define-shortcuts'
       },
       {
         label: 'useOverlay',
         icon: 'i-lucide-file-text',
         description: 'Display a modal/slideover within your application.',
-        to: '/composables/use-overlay'
+        to: '/docs/composables/use-overlay'
       },
       {
         label: 'useToast',
         icon: 'i-lucide-file-text',
         description: 'Display a toast within your application.',
-        to: '/composables/use-toast'
+        to: '/docs/composables/use-toast'
       }
     ]
   },
   {
     label: 'Components',
     icon: 'i-lucide-box',
-    to: '/components',
+    to: '/docs/components',
     active: true,
     children: [
       {
         label: 'Link',
         icon: 'i-lucide-file-text',
         description: 'Use NuxtLink with superpowers.',
-        to: '/components/link'
+        to: '/docs/components/link'
       },
       {
         label: 'Modal',
         icon: 'i-lucide-file-text',
         description: 'Display a modal within your application.',
-        to: '/components/modal'
+        to: '/docs/components/modal'
       },
       {
         label: 'NavigationMenu',
         icon: 'i-lucide-file-text',
         description: 'Display a list of links.',
-        to: '/components/navigation-menu'
+        to: '/docs/components/navigation-menu'
       },
       {
         label: 'Pagination',
         icon: 'i-lucide-file-text',
         description: 'Display a list of pages.',
-        to: '/components/pagination'
+        to: '/docs/components/pagination'
       },
       {
         label: 'Popover',
         icon: 'i-lucide-file-text',
         description: 'Display a non-modal dialog that floats around a trigger element.',
-        to: '/components/popover'
+        to: '/docs/components/popover'
       },
       {
         label: 'Progress',
         icon: 'i-lucide-file-text',
         description: 'Show a horizontal bar to indicate task progression.',
-        to: '/components/progress'
+        to: '/docs/components/progress'
       }
     ]
   },

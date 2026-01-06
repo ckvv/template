@@ -1,9 +1,10 @@
+import { authMiddleware } from '#middleware';
 import { jwt } from '#utils';
-import { createH3, deleteCookie, readValidatedBody, setCookie } from 'h3';
+import { deleteCookie, H3, readValidatedBody, setCookie } from 'h3';
 import { authSchema } from './auth.schema.ts';
 import * as authService from './auth.service.ts';
 
-export const app = createH3();
+export const app = new H3();
 
 app.post('/signin', async (event) => {
   const params = await readValidatedBody(event, authSchema.signin.parse);
@@ -23,11 +24,15 @@ app.post('/signup', async (event) => {
 
 app.post('/signout', async (event) => {
   deleteCookie(event, 'token');
+}, {
+  middleware: [authMiddleware()],
 });
 
 app.get('/me', async (event) => {
   const user = await authService.me({
-    id: event.context.user.id,
+    id: event.context.user!.id,
   });
   return user;
+}, {
+  middleware: [authMiddleware()],
 });

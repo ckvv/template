@@ -7,7 +7,6 @@
   "author": "ckvv",
   "license": "ISC",
   "keywords": [],
-  "main": "./dist/index.js",
   "imports": {
     "#*": "./dist/*",
     "#db": "./dist/db/index.js",
@@ -18,6 +17,7 @@
     "#modules": "./dist/modules/index.js",
     "#constant": "./dist/constant/index.js"
   },
+  "main": "./dist/index.js",
   "engines": {
     "node": "^22.x"
   },
@@ -29,19 +29,20 @@
     "db": "drizzle-kit"
   },
   "dependencies": {
-    "drizzle-kit": "^0.30.6",
-    "drizzle-orm": "^0.41.0",
-    "fast-jwt": "^6.0.1",
-    "h3": "npm:h3-nightly@2.0.0-20250401-195422-5407a55",
-    "pg": "^8.14.1",
-    "pino": "^9.6.0",
-    "zod": "^3.24.2"
+    "drizzle-kit": "^0.31.4",
+    "drizzle-orm": "^0.44.5",
+    "fast-jwt": "^6.0.2",
+    "h3": "npm:h3-nightly@2.0.0-20250908-082055-1d732b3",
+    "pg": "^8.16.3",
+    "pino": "^9.11.0",
+    "zod": "^4.1.11"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^4.11.0",
-    "@types/node": "22.14.0",
-    "eslint": "^9.24.0",
-    "tsx": "^4.19.3",
-    "typescript": "^5.8.3"
+    "@antfu/eslint-config": "^5.4.1",
+    "@types/node": "24.5.2",
+    "dotenv": "^17.2.2",
+    "eslint": "^9.36.0",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.2"
   }
 }

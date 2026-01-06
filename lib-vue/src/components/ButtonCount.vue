@@ -1,14 +1,14 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref } from 'vue'
 
 defineOptions({
   name: 'ButtonCount',
-});
+})
 
-const value = ref(0);
+const value = ref(0)
 
 function add() {
-  value.value++;
+  value.value++
 }
 </script>
 

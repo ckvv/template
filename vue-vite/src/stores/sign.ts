@@ -1,8 +1,8 @@
 import type { RouteLocationRaw } from '@/router';
-import { authAPI } from '@/api';
-import { router } from '@/router';
 import { defineStore } from 'pinia';
 import { computed, ref } from 'vue';
+import { authAPI } from '@/api';
+import { router } from '@/router';
 
 export interface User {
   id?: number;

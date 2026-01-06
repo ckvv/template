@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "lib": [
+      "ESNext"
+    ],
+    "module": "NodeNext",
+    "moduleResolution": "nodenext",
+    "paths": {
+      "#*": ["./src/*"],
+      "#command": ["./src/command/index.ts"],
+      "#command/*": ["./src/command/*"]
+    },
+    "resolveJsonModule": true,
+    "strict": true,
+    "declaration": true,
+    "forceConsistentCasingInFileNames": true,
+    "verbatimModuleSyntax": true,
+    "erasableSyntaxOnly": true,
+    "skipLibCheck": true,
+    "rewriteRelativeImportExtensions": true
+  },
+  "include": [
+    "src",
+    "tests"
+  ]
+}

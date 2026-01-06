@@ -1,7 +1,8 @@
-import { defineEventHandler, handleCors } from 'h3';
+import type { Middleware } from 'h3';
+import { handleCors } from 'h3';
 
-export function corsMiddleware() {
-  return defineEventHandler(async (event) => {
+export function corsMiddleware(): Middleware {
+  return async (event) => {
     const corsRes = handleCors(event, {
       origin: '*',
       preflight: {
@@ -12,5 +13,5 @@ export function corsMiddleware() {
     if (corsRes) {
       return corsRes;
     }
-  });
-}
+  };
+};

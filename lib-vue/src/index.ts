@@ -1,8 +1,8 @@
-import { ButtonCount, HelloWorld } from './components';
-import { create } from './create';
+import { ButtonCount, HelloWorld } from './components'
+import { create } from './create'
 
-export const install = create({ components: [ButtonCount, HelloWorld] });
+export const install = create({ components: [ButtonCount, HelloWorld] })
 
 export {
   create,
-};
+}
