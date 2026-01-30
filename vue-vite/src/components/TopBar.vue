@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { routes } from 'vue-router/auto-routes';
 
-const items = routes.map((v) => {
+const items = routes.filter(v => !v.meta?.hide).map((v) => {
   return {
-    label: v.name,
+    label: v.name as string,
     to: v.path,
   };
 });

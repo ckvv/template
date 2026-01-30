@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { ref, useTemplateRef } from 'vue';
 import { authAPI } from '@/api';
 import { signSchema } from '@/constant/schema';
 import { router, useRoute } from '@/router';

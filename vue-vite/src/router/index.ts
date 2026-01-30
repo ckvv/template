@@ -4,21 +4,9 @@ import { useSignStore } from '@/stores/sign';
 
 export { type RouteLocationRaw, useLink, useRoute, useRouter } from 'vue-router';
 
-export const defaultRoutePath = '/';
-
 export const router = createRouter({
   history: createWebHistory(),
-  routes: [
-    // {
-    //   path: '/',
-    //   redirect: defaultRoutePath,
-    // },
-    ...routes,
-    {
-      path: '/:pathMatch(.*)*',
-      redirect: defaultRoutePath,
-    },
-  ],
+  routes,
 });
 
 router.beforeEach((to, from, next) => {
