@@ -9,6 +9,9 @@
     "resolveJsonModule": true,
     "strict": true,
     "declaration": true,
+    "declarationMap": false,
+    "emitDeclarationOnly": true,
+    "stripInternal": true,
     "forceConsistentCasingInFileNames": true,
     "verbatimModuleSyntax": true,
     "erasableSyntaxOnly": true,
@@ -16,7 +19,9 @@
     "rewriteRelativeImportExtensions": true
   },
   "include": [
+    "playground",
     "src",
-    "tests"
+    "tests",
+    "*.ts"
   ]
 }

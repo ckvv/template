@@ -4,5 +4,7 @@ import { create } from './create'
 export const install = create({ components: [ButtonCount, HelloWorld] })
 
 export {
+  ButtonCount,
   create,
+  HelloWorld,
 }

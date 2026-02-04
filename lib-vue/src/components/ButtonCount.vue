@@ -13,7 +13,7 @@ function add() {
 </script>
 
 <template>
-  <button @click="add">
+  <button class="color-red" @click="add">
     value: {{ value }}
   </button>
 </template>

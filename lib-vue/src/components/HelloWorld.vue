@@ -5,7 +5,7 @@ defineOptions({
 </script>
 
 <template>
-  <div>
+  <div class="color-blue">
     hello world
   </div>
 </template>

@@ -1,5 +1,5 @@
 {
-  "name": "lib-js",
+  "name": "lib-vue",
   "type": "module",
   "version": "1.0.0",
   "private": false,
@@ -19,6 +19,7 @@
     "dist"
   ],
   "scripts": {
+    "play": "vite -c vite.playground.ts",
     "dev": "node --import=tsx src/index.ts",
     "build": "tsdown",
     "test": "vitest",
@@ -27,18 +28,21 @@
     "publish:npm": "npm run build && npm publish --registry https://registry.npmjs.org/ --access public"
   },
   "dependencies": {
-    "vue": "^3.5.18"
+    "unocss": "^66.6.0",
+    "vue": "^3.5.27"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^5.2.1",
-    "@types/node": "^24.2.1",
-    "eslint": "^9.33.0",
-    "lint-staged": "^16.1.5",
+    "@antfu/eslint-config": "^7.2.0",
+    "@types/node": "^25.2.0",
+    "eslint": "^9.39.2",
+    "lint-staged": "^16.2.7",
     "simple-git-hooks": "^2.13.1",
-    "tsdown": "^0.14.1",
-    "typescript": "^5.9.2",
-    "unplugin-vue": "7.0.1",
-    "vitest": "^3.2.4"
+    "tsdown": "^0.20.1",
+    "typescript": "^5.9.3",
+    "unplugin-vue": "7.1.1",
+    "vite": "^8.0.0-beta.12",
+    "vitest": "^4.0.18",
+    "vue-tsc": "^3.2.4"
   },
   "pnpm": {
     "onlyBuiltDependencies": [
