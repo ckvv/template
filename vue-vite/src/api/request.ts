@@ -1,9 +1,10 @@
 import { createFetch } from '@vueuse/core';
+import { ENV_CONFIG } from '@/constant/config';
 
 const toast = useToast();
 
 export const useFetch = createFetch({
-  baseUrl: '//template.ckvv.net/',
+  baseUrl: ENV_CONFIG.BASE_URL,
   options: {
     immediate: false,
     async beforeFetch(ctx) {
