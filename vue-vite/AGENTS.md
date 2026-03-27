@@ -6,9 +6,9 @@
 
 - **核心框架**: Vue 3.5+ (Composition API, `<script setup>`)
 - **构建工具**: Vite 7+
-- **UI 组件库**: [@nuxt/ui v4](https://ui.nuxt.com/v4) (基于 Tailwind CSS 4)
-- **样式方案**: Tailwind CSS 4
-- **路由管理**: [Vue Router 5](https://router.vuejs.org/) (使用 `vue-router/vite` 实现 `src/pages` 目录下的文件系统路由)
+- **UI 组件库**: [@nuxt/ui](https://ui.nuxt.com)
+- **样式方案**: Tailwind CSS
+- **路由管理**: [Vue Router](https://router.vuejs.org/) (使用 `vue-router/vite` 实现 `src/pages` 目录下的文件系统路由)
 - **状态管理**: [Pinia](https://pinia.vuejs.org/) & [@pinia/colada](https://colada.pinia.vuejs.org/)
 - **网络请求**: [ofetch](https://github.com/unjs/ofetch) & [VueUse `useFetch`](https://vueuse.org/core/useFetch/) 封装
 - **数据验证**: [Zod](https://zod.dev/)
